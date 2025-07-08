@@ -358,7 +358,7 @@ export default function Header() {
                   animate={{ scale: 1, y: 0, opacity: 1 }}
                   exit={{ scale: 0.9, y: 50, opacity: 0 }}
                   transition={{ type: "spring", stiffness: 200, damping: 20 }}
-                  className="fixed top-1/2 left-1/2 z-50 px-8 w-[90%] max-w-xl md:max-w-5xl -translate-x-1/2 -translate-y-1/2"
+                  className="fixed top-1/2 left-1/2 z-50 px-8 w-full max-w-xl md:max-w-5xl -translate-x-1/2 -translate-y-1/2"
                 >
                   <CardModal project={activeProject} />
                 </motion.div>
@@ -393,7 +393,7 @@ export default function Header() {
         <h2 className="w-full text-center opp-port-text font-bold text-xl py-2 opp-port-bg">
           My coding contributions
         </h2>
-        <div className="grid sm:grid-cols-2 py-4 px-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 py-4 px-4 gap-4">
           <GitHubActivity/>
           <LeetCodeStats username={"whoshnri"}/>
         </div>
@@ -553,7 +553,7 @@ const GitHubActivity = () => {
       <h2 className="text-center opp-port-text font-bold text-xl opp-port-bg">
         GitHub
       </h2>
-      <div className="flex justify-center overflow-x-auto font-sans">
+      <div className="flex justify-center overflow-hidden w-full font-sans">
         <GitHubCalendar
           username="whoshnri"
           colorScheme="light"
