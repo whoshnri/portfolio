@@ -113,7 +113,7 @@ export default function Header() {
 
 
   return (
-    <div className={`${dark && 'dark'} port-text port-bg relative w-full p-3 `}>
+    <div className={`${dark && 'dark'} relative port-text port-bg relative w-full p-3 `}>
 
     <div className="w-full max-w-6xl mx-auto border-2">
       <div className="bg-black mx-auto border-b-2">
@@ -358,7 +358,7 @@ export default function Header() {
                   animate={{ scale: 1, y: 0, opacity: 1 }}
                   exit={{ scale: 0.9, y: 50, opacity: 0 }}
                   transition={{ type: "spring", stiffness: 200, damping: 20 }}
-                  className="fixed top-1/2 left-1/2 z-50 px-8 w-full max-w-xl md:max-w-5xl -translate-x-1/2 -translate-y-1/2"
+                  className="fixed top-1/2 left-1/2 z-50 px-8 w-[90%] max-w-xl md:max-w-5xl -translate-x-1/2 -translate-y-1/2"
                 >
                   <CardModal project={activeProject} />
                 </motion.div>
