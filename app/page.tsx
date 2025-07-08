@@ -241,7 +241,7 @@ export default function Header() {
         <ul className="space-y-1">
           <li className="flex items-center gap-2">
             <Server className="w-4 h-4 text-indigo-400" />
-            Next API
+            NodeJS
           </li>
           <li className="flex items-center gap-2">
             <CloudCog className="w-4 h-4 text-orange-400" />
@@ -451,6 +451,9 @@ export default function Header() {
             loading="lazy"
           />
         </div>
+         <h2 className="text-center opp-port-text font-bold text-xs py-1 opp-port-bg w-fit px-6 mx-auto">
+          90% chance I am listening RN.
+        </h2>
     </section>
 
      <footer className="border-t-2 port-border w-full bg-black text-white text-center font-bold text-xl py-6 mt-5">
