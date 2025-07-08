@@ -4,15 +4,15 @@
 
 :root {
   font-family: var(--font-plex-mono), monospace;
-  --craft-bg: #ffffff;
+  --craft-bg: #d4c585;
   --craft-text: #000000;
-  --craft-accent: #000000;
+  --craft-accent: #d4c585;
 }
 
 .dark {
   --craft-bg: #000000;
-  --craft-text: #ffffff;
-  --craft-accent: #ffffff;
+  --craft-text: #d4c585;
+  --craft-accent: #d4c585;
 }
 
 body {
@@ -35,10 +35,13 @@ body {
   border-color: var(--craft-text);
 }
 
-.port-icon {
+.port-icon{
   stroke: var(--craft-text);
 }
 
+.opp-port-icon {
+  stroke: var(--craft-bg);
+}
 
 .opp-port-text {
   color: var(--craft-bg);
