@@ -7,7 +7,6 @@ import type { StaticImageData } from 'next/image'
 import logo from '../public/brand.png';
 import GitHubCalendar from 'react-github-calendar';
 import {
-  Briefcase,
   Linkedin,
   Twitter,
   MapPin,
