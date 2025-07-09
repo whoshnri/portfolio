@@ -102,17 +102,17 @@ type Blog = {
       }
 
       const data = await res.json();
-      console.log("✅ Blogs fetched:", data); // Debug
+      setLoading(false)
       setBlogs(data.results as Blog[]); // Access the correct field
     } catch (error) {
       console.error("❌ Error fetching blogs:", error);
+      setLoading(false)
       setErrors("An unexpected error occurred");
     }
+
   }
 
   getBlogs();
-  setLoading(false)
-
 }, []);
 
 
