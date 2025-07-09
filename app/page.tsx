@@ -12,6 +12,7 @@ import {
   MapPin,
   BookOpen,
   Download,
+  Coffee,
   FileCode2,
   Terminal,
   Code2,
@@ -524,15 +525,15 @@ export default function Header() {
                 <p className="dropdown-content text-black text-xs px-1 bg-white">Twitter</p>
               </a>
 
-              {/*<a
-                href="https://www.upwork.com/freelancers/"
+              <a
+                href="https://www.buymeacoffee.com/whoshnri"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="dropdown dropdown-bottom dropdown-hover hover:scale-110 transition"
               >
-                <Briefcase className="w-5 h-5 stroke-white" />
-                <p className="dropdown-content text-black text-xs px-1 bg-white">Upwork</p>
-              </a>*/}
+                <Coffee className="w-5 h-5" />
+                <p className="dropdown-content text-black text-xs px-1 bg-white">Twitter</p>
+              </a>
             </div>
           </div>
         </footer>
