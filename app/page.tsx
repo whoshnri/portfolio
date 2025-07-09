@@ -532,7 +532,7 @@ export default function Header() {
                 className="dropdown dropdown-bottom dropdown-hover hover:scale-110 transition"
               >
                 <Coffee className="w-5 h-5" />
-                <p className="dropdown-content text-black text-xs px-1 bg-white">Twitter</p>
+                <p className="dropdown-content text-black text-xs px-1 bg-white">Buy Me A Coffee</p>
               </a>
             </div>
           </div>
