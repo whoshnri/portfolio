@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import type { StaticImageData } from 'next/image'
 import logo from '../public/brand.png';
 import GitHubCalendar from 'react-github-calendar';
+import Link from 'next/link';
 import {
   Linkedin,
   Twitter,
@@ -78,33 +79,6 @@ const Projects:Projj[] = [
   }
 ];
 
-
-const Blogs = [
-  {
-    title: "The Life and Times of Specimen H007B: A Weird-life Documentary",
-    desc: "*As narrated by the specimen himself, in the tradition of those who document the peculiar behaviors of Earth's most fascinating creatures\nChapter 1: The Specimen's Peculiar Feeding Habits and Interests",
-    date: "24 Jun 2025",
-    link: "https://quilled-5su6.onrender.com/read/the-life-and-times-of-specimen-h007b-a-weird-life-documentary"
-  },
-  {
-    title: "How Introversion Helped Me: A Personal Journey.",
-    desc: "For years, I viewed my introverted nature as something to overcome rather than embrace. Society often portrays introversion as a limitation—a barrier to success and connection. But through my personal journey, I've discovered that introversion isn't a weakness to fix; it's a superpower that has fundamentally shaped who I am and how I achieve my goals.",
-    date: "21 Jun 2025",
-    link: "https://quilled-5su6.onrender.com/read/why-introversion-helped-me-a-personal-journey"
-  },
-  {
-    title: "The Tech Seminar that Rewrote My Understanding of User Experience",
-    desc: "I walked into that conference room on a Tuesday morning expecting another routine tech seminar—the kind where you learn a few new frameworks, jot down some best practices, and call it professional development. What I didn't expect was to have my entire understanding of user experience fundamentally challenged and rebuilt from the ground up.",
-    date: "19 Jun 2025",
-    link: "https://quilled-5su6.onrender.com/read/the-tech-seminar-that-rewrote-my-understanding-of-user-experience"
-  },
-  {
-    title: "From Zero To A lot More than Zero - my progress so far",
-    desc: "What’s good, everyone! I’m Henry Bassey, and yes, I call myself “The Big Boss” — because I built this entire site from scratch. Pretty cool, right? But trust me, it wasn’t always smooth sailing. This blog you're reading sits on top of my first major coding project — a Flask backend with a React frontend — and oh boy, do I have stories to tell.",
-    date: "19 Jun 2025",
-    link: "https://quilled-5su6.onrender.com/read/from-zero-to-a-lot-more-than-zero-my-progress-so-far"
-  }
-]
 
 
 export default function Header() {
@@ -368,28 +342,6 @@ export default function Header() {
           </AnimatePresence>
 
     </section>
-
-    <section className="">
-        <h2 className="w-full text-center opp-port-text font-bold text-xl py-2 opp-port-bg">
-          My quills &amp; writing on Quilled
-        </h2>
-        <div className="grid sm:grid-cols-2 py-4 md:grid-cols-3 px-4 gap-4">
-          {Blogs.map((blog, idx) => (
-            <a
-              key={idx}
-              href={blog.link}
-              target="blank"
-              className="border p-4 hover:scale-105 shadow hover:shadow-md transition duration-300 "
-            >
-              <h3 className="font-bold text-lg mb-2">{blog.title}</h3>
-              <p className="text-sm opacity-80 mb-4 line-clamp-3 font-semibold">{blog.desc}</p>
-              <span className="text-xs font-mono opacity-60">{blog.date}</span>
-            </a>
-          ))}
-        </div>
-      </section>
-
-
      <section className="">
         <h2 className="w-full text-center opp-port-text font-bold text-xl py-2 opp-port-bg">
           My coding contributions
@@ -398,64 +350,9 @@ export default function Header() {
           <GitHubActivity/>
           <LeetCodeStats username={"whoshnri"}/>
         </div>
-        <h2 className="text-center opp-port-text font-bold text-xs py-1 opp-port-bg w-fit px-6 mx-auto">
-          These aren&apos;t so impressive tbh 😭
-        </h2>
-
-     </section>
-
-     <section className="mt-10 port-bg">
-        <h2 className="w-full text-center opp-port-text font-bold text-xl py-2 opp-port-bg">
-          My fav playlists on Spotify
-        </h2>
-        <div
-        style={{
-            overflowY: 'scroll',
-            scrollbarWidth: 'none', // Firefox
-            msOverflowStyle: 'none', // IE 10+
-          }}
-         className="p-4 gap-5 w-full overflow-x-auto flex port-bg">
-        <iframe
-            style={{ borderRadius: '15px' }}
-            title="Spotify Embed: Recommendation Playlist "
-            src={`https://open.spotify.com/embed/playlist/4U3X6USTiAFHXfqB5TAzpx?utm_source=generator&theme=0`}
-            className="w-full h-88"
-            frameBorder="0"
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy"
-          />
-          <iframe
-            style={{ borderRadius: '15px' }}
-            title="Spotify Embed: Recommendation Playlist "
-            src={`https://open.spotify.com/embed/playlist/046gNgcZND0993EN46J0xF?utm_source=generator&theme=0`}
-            className="w-full h-88"
-            frameBorder="0"
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy"
-          />
-          <iframe
-            style={{ borderRadius: '15px' }}
-            title="Spotify Embed: Recommendation Playlist "
-            src={`https://open.spotify.com/embed/playlist/7yknJRT7MuxekMnXBq5bif?utm_source=generator&theme=0`}
-            className="w-full h-88"
-            frameBorder="0"
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy"
-          />
-          <iframe
-            style={{ borderRadius: '15px' }}
-            title="Spotify Embed: Recommendation Playlist "
-            src={`https://open.spotify.com/embed/playlist/3e8Q4TsJbA5mfWvvIDSf2x?utm_source=generator&theme=0`}
-            className="w-full h-88"
-            frameBorder="0"
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy"
-          />
-        </div>
-         <h2 className="text-center opp-port-text font-bold text-xs py-1 opp-port-bg w-fit px-6 mx-auto">
-          90% chance I am listening RN.
-        </h2>
     </section>
+
+
 
      <footer className="border-t-2 port-border w-full bg-black text-white text-center font-bold text-xl py-6 mt-5">
           <div className="flex flex-col lg:flex-row items-center justify-between max-w-6xl mx-auto px-4 gap-4">
@@ -463,7 +360,8 @@ export default function Header() {
               &copy; 2025 Henry Bassey. All rights reserved.
             </p>
 
-            <label className="swap swap-rotate">
+            <div className="flex gap-3">
+            <label className="swap swap-rotate border  px-4 py-2">
               {/* this hidden checkbox controls the state */}
               <input type="checkbox" />
               <svg
@@ -483,12 +381,19 @@ export default function Header() {
                   d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
               </svg>
             </label>
+            <Link
+                href="/casual"
+                className="flex items-center gap-2 border border-current px-4 py-2 hover:scale-105 transition duration-200 text-sm font-sans"
+              >
+                Casual
+              </Link>
+              </div>
 
             <div className="flex gap-4 items-center">
               <a
                 href="/resume.pdf"
                 target="_blank"
-                className="flex items-center gap-2 border border-current px-4 py-2 rounded hover:scale-105 transition duration-200 text-sm font-sans"
+                className="flex items-center gap-2 border border-current px-4 py-2 hover:scale-105 transition duration-200 text-sm font-sans"
               >
                 <Download className="w-4 h-4" />
                 Resume
@@ -526,15 +431,16 @@ export default function Header() {
               </a>
 
               <a
-                href="https://www.buymeacoffee.com/whoshnri"
+                href="https://www.buymeacoffee.com/whoshnri/my-workspace-upgrade-savings"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="dropdown dropdown-bottom dropdown-hover hover:scale-110 transition"
               >
                 <Coffee className="w-5 h-5" />
-                <p className="dropdown-content text-black text-xs px-1 bg-white">Buy Me A Coffee</p>
+                <p className="dropdown-content text-black text-xs px-1 bg-white">Donate</p>
               </a>
             </div>
+
           </div>
         </footer>
 

@@ -11,7 +11,7 @@ const ibmPlexMono = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   title: "Meet Henry!",
-  description: "Web developer, writer, code lover!",
+  description: "Web developer, code lover!",
 };
 
 export default function RootLayout({
