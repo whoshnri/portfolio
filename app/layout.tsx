@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
+import { BackgroundBeams } from "./components/Beams";
 
 const ibmPlexMono = IBM_Plex_Mono({
   variable: "--font-plex-mono",
   subsets: ["latin"],
   weight: ["300", "400", "500", "700"], // Add 300 for font-light
 });
-
 
 export const metadata: Metadata = {
   title: "Meet Henry!",
@@ -21,7 +21,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${ibmPlexMono.variable} antialiased`}>
+      <body className={`${ibmPlexMono.variable} antialiased p-9`}>
+        <BackgroundBeams />
+
         {children}
       </body>
     </html>
