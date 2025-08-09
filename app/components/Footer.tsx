@@ -36,12 +36,12 @@ const socialLinks = [
 
 export default function Footer() {
     return (
-        <footer className="items-center w-full mx-auto p-8 justify-evenly text-center bg-black shadow-lg border border-gray-800">
+        <footer className="items-center w-full mx-auto p-8 justify-evenly text-center bg-black shadow-lg border border-gray-800  rounded-2xl space-y-6 ">
             <section className="space-y-3 items-center gap-4 my-6 px-5">
                  {/* Action Buttons Section */}            
                 <a 
                     href="mailto:henrybassey2007@gmail.com"
-                    className="flex items-center gap-2 bg-white text-black px-4 py-2 rounded-lg cursor-pointer group w-full sm:w-auto justify-center"
+                    className="flex items-center gap-2 bg-white text-black px-4 py-2 rounded-xl cursor-pointer group w-full sm:w-auto justify-center"
                 >
                     Send me an email
                     <ArrowRight className="-rotate-45 bg-black rounded-full stroke-white group-hover:scale-110 group-hover:rotate-0 transition-all duration-300"/>
@@ -49,7 +49,7 @@ export default function Footer() {
                 <a
                     href="/resume.pdf"
                     download    
-                    className="flex items-center gap-2 bg-white text-black px-4 py-2 rounded-lg cursor-pointer group w-full sm:w-auto justify-center"
+                    className="flex items-center gap-2 bg-white text-black px-4 py-2 rounded-xl cursor-pointer group w-full sm:w-auto justify-center"
                 >
                     Download my resume
                     <ArrowRight className="-rotate-45 bg-black rounded-full stroke-white group-hover:scale-110 group-hover:rotate-0 transition-all duration-300"/>
@@ -59,11 +59,11 @@ export default function Footer() {
             {/* Social Links Section */}
             <section className="">
             <div className="my-8">
-                <h3 className="text-xl mb-5 relative  text-white">
+                <h3 className="text-md mb-5 relative  text-white">
                     <span className="bg2 absolute h-1 w-40 mx-auto inset-0 top-7"></span>
                     Find and follow me over here
                 </h3>
-                <nav className="flex items-center justify-center gap-6 sm:gap-8">
+                <nav className="flex items-center justify-center gap-6 text-sm sm:gap-8">
                     {socialLinks.map((link) => (
                         <a
                             key={link.name} 

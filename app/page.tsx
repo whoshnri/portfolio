@@ -11,7 +11,7 @@ import Footer from "./components/Footer";
 
 export default function Header() {
   return (
-    <div className={`relative relative px-4 bg-black max-w-[500px] mx-auto rounded-lg py-10 border border-gray-800`}>
+    <div className={`relative px-4 bg-black max-w-[500px] mx-auto rounded-lg py-10 border border-gray-800`}>
       <Hero/>
       <Skills/>
       <Blogs/>

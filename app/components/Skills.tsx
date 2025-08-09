@@ -69,7 +69,16 @@ const Projects: Projj[] = [
         github: "https://github.com/whoshnri/anonx",
         live: "http://app-anonx.vercel.app/",
         done: true
+    },
+    {
+        name: "YCT CHATBOT",
+        stack: ["Flask", "Gemini API", "Langgraph", "Python", "HTML", "CSS", "JavaScript"],
+        desc: "A chatbot for Yaba College of Technology. Built by the YDTA Chatbot Team. I contributed to the LangGraph integration and backend development. I was also group lead.",
+        github: "https://github.com/whoshnri/yct_chatbot",
+        live: "https://github.com/whoshnri/yct_chatbot",
+        done: false
     }
+
 ];
 
 export default function Skills() {
@@ -78,7 +87,7 @@ export default function Skills() {
             {/* Left Column */}
             <section className="grid gap-6">
                 {/* Skills Section */}
-                <div className="border border-gray-800 p-6">
+                <div className="border border-gray-800 p-6 rounded-2xl">
                     <h1 className="text-3xl font-bold mb-5 flex items-center gap-3">
                         <Code size={28} className="text-cyan-400" /> Skills
                     </h1>
@@ -93,7 +102,7 @@ export default function Skills() {
                 </div>
 
                 {/* Education Section */}
-                <div className="border border-gray-800 p-6 space-y-5">
+                <div className="border border-gray-800 p-6 space-y-5 rounded-2xl">
                     <h1 className="text-3xl font-bold mb-5 flex items-center gap-3">
                         <GraduationCap size={28} className="text-cyan-400" /> Education
                     </h1>
@@ -109,7 +118,7 @@ export default function Skills() {
             </section>
 
             {/* Right Column (Projects) */}
-            <section className=" border border-gray-800 p-6">
+            <section className=" border border-gray-800 p-6 rounded-2xl">
                 <h1 className="text-3xl font-bold mb-2 flex items-center gap-3">
                     <Briefcase size={28} className="text-cyan-400" /> Projects
                 </h1>

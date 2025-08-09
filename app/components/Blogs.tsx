@@ -77,7 +77,7 @@ const Blogs = () => {
           </div>
         )}
         {blogs.length > 0 ? (
-          <div className="grid py-4 px-4 gap-4 text-white ">
+          <div className="grid py-4 px-4 gap-4 text-white">
             {blogs.map((blog, idx) => (
               <a
                 key={idx}
@@ -85,7 +85,7 @@ const Blogs = () => {
                   blog.title
                 )}`}
                 target="blank"
-                className="border border-gray-700 p-4 hover:scale-105 shadow hover:shadow-md transition duration-300 rounded-xl"
+                className="border border-gray-700  rounded-2xl  p-4 hover:scale-105 shadow hover:shadow-md transition duration-300"
               >
                 <h1
                   style={{ fontFamily: "'Permanent Marker', cursive" }}
@@ -105,7 +105,7 @@ const Blogs = () => {
             <Link
           href="https://quilled-5su6.onrender.com"
           target="_blank"
-          className="flex items-center gap-2 bg-white text-black px-4 py-2 rounded-lg cursor-pointer group justify-center"
+          className="flex items-center gap-2 bg-white text-black px-4 py-2 rounded-2xl cursor-pointer group justify-center"
         >
           More on Quilled
           <ArrowRight className="-rotate-45 bg-black rounded-full stroke-white transition-all duration-300 group-hover:scale-110 group-hover:rotate-0" />

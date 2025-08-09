@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${ibmPlexMono.variable} antialiased p-9`}>
+      <body className={`${ibmPlexMono.variable} antialiased py-9 px-3`}>
         <BackgroundBeams />
 
         {children}
