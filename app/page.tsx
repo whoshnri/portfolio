@@ -3,6 +3,9 @@ import Header from "./Pager";
 
 export default function page() {
   return (
-   <Header/>
+    <>
+      <div className="bg-main fixed inset-0"></div>
+      <Header />
+    </>
   );
 }

@@ -6,16 +6,17 @@
 @plugin "daisyui";
 
 :root {
-      --craft-bg: #000000;
+  --craft-bg: #000000;
   --craft-text: #d4d3ce;
   --craft-accent: #d4d3ce;
-  
-  cursor:none
+
+  cursor: none
 }
+
 body {
   background-color: var(--craft-bg);
   color: var(--craft-text);
-   font-family: sans-serif;
+  font-family: sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -25,7 +26,7 @@ body {
   border-color: white;
   border: 2px solid white;
   position: relative;
-  overflow:hidden;
+  overflow: hidden;
 }
 
 .btn-border-reveal {
@@ -71,7 +72,7 @@ body {
   border-color: var(--craft-text);
 }
 
-.port-icon{
+.port-icon {
   stroke: var(--craft-text);
 }
 
@@ -101,33 +102,28 @@ body {
 }
 
 .bg-lines {
-  background-image: repeating-linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.05) 0px,
-    rgba(255, 255, 255, 0.05) 1px,
-    transparent 1px,
-    transparent 20px
-  );
+  background-image: repeating-linear-gradient(to bottom,
+      rgba(255, 255, 255, 0.05) 0px,
+      rgba(255, 255, 255, 0.05) 1px,
+      transparent 1px,
+      transparent 20px);
 }
 
 .bg-vertical-lines {
-  background-image: repeating-linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0.05) 0px,
-    rgba(255, 255, 255, 0.05) 1px,
-    transparent 1px,
-    transparent 20px
-  );
+  background-image: repeating-linear-gradient(to right,
+      rgba(255, 255, 255, 0.05) 0px,
+      rgba(255, 255, 255, 0.05) 1px,
+      transparent 1px,
+      transparent 20px);
 }
 
 .bg-diagonal-lines {
-  background-image: repeating-linear-gradient(
-    135deg,                          /* angle */
-    rgba(255, 255, 255, 0.05) 0px,
-    rgba(255, 255, 255, 0.05) 1px,
-    transparent 1px,
-    transparent 20px
-  );
+  background-image: repeating-linear-gradient(135deg,
+      /* angle */
+      rgba(255, 255, 255, 0.05) 0px,
+      rgba(255, 255, 255, 0.05) 1px,
+      transparent 1px,
+      transparent 20px);
   background-size: 100% 100%;
   animation: moveLines 10s linear infinite;
 }
@@ -136,24 +132,22 @@ body {
   from {
     background-position: 0 0;
   }
+
   to {
     background-position: 100px 100px;
   }
 }
 
-.bg{
-  background-color:  white;
+.bg {
+  background-color: white;
   background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
 .bg2 {
-  background: 
-    repeating-linear-gradient(
-      90deg,
+  background:
+    repeating-linear-gradient(90deg,
       currentColor 0 1em,
-      transparent 0 1.75em
-    )
-    0 100% / 5em 2px repeat;
+      transparent 0 1.75em) 0 100% / 5em 2px repeat;
 }
 
 @theme inline {
@@ -198,14 +192,20 @@ body {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
 }
 
 @keyframes marquee {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .animate-marquee {
@@ -220,7 +220,8 @@ body {
   font-weight: 600;
   color: #fff;
   background: none;
-  border: none;;
+  border: none;
+  ;
   overflow: hidden;
   transition: all 0.4s ease;
   min-width: 200px;
@@ -230,7 +231,7 @@ body {
 
 .neon-pulse {
   background: #000;
-  border: 1px solid  #51a2ff;
+  border: 1px solid #51a2ff;
   box-shadow: 0 0 10px #51a2ff;
   position: relative;
   overflow: visible;
@@ -257,6 +258,7 @@ body {
     transform: scale(1);
     opacity: 1;
   }
+
   100% {
     transform: scale(1.1);
     opacity: 0;
@@ -265,7 +267,7 @@ body {
 
 @theme inline {
   --animate-scroll: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
- 
+
   @keyframes scroll {
     to {
       transform: translate(calc(-50% - 0.5rem));
@@ -274,3 +276,9 @@ body {
 }
 
 
+.bg-main {
+  background-color: #000000;
+  background-image: radial-gradient(#6c80cc 2px, transparent 2px), radial-gradient(#6c80cc 2px, #000000 2px);
+  background-size: 80px 80px;
+  background-position: 0 0, 40px 40px;
+}
