@@ -1,23 +1,8 @@
-"use client"
-// import GitHubCalendar from 'react-github-calendar';
-import Hero from '@/app/components/Hero'
-import Skills from "./components/Skills"
-import Blogs from "./components/Blogs";
-import Footer from "./components/Footer";
+import React from "react";
+import Header from "./Pager";
 
-
-
-
-
-export default function Header() {
+export default function page() {
   return (
-    <div className={`relative px-4 bg-black max-w-[500px] mx-auto rounded-lg py-10 border border-gray-800`}>
-      <Hero/>
-      <Skills/>
-      <Blogs/>
-      <Footer/>
-
-    </div>
-
+   <Header/>
   );
 }

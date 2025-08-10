@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { BackgroundBeams } from "./components/Beams";
+import CustomCursor from "@/components/CustomCursor";
 
 const ibmPlexMono = IBM_Plex_Mono({
   variable: "--font-plex-mono",
@@ -21,9 +22,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${ibmPlexMono.variable} antialiased py-9 px-3`}>
-        <BackgroundBeams />
-
+      <body className={`${ibmPlexMono.variable} antialiased py-9 px-3 cursor-none`}>
+        <BackgroundBeams  className="fixed inset-0" />
+        <CustomCursor />
         {children}
       </body>
     </html>

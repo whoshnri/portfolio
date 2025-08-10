@@ -9,6 +9,8 @@
       --craft-bg: #000000;
   --craft-text: #d4d3ce;
   --craft-accent: #d4d3ce;
+  
+  cursor:none
 }
 body {
   background-color: var(--craft-bg);
@@ -16,6 +18,45 @@ body {
    font-family: sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+.btn-border-reveal {
+  background-color: transparent;
+  color: white;
+  border-color: white;
+  border: 2px solid white;
+  position: relative;
+  overflow:hidden;
+}
+
+.btn-border-reveal {
+  position: relative;
+  padding: 10px 20px;
+  color: white;
+  border: 2px solid white;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-border-reveal::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: white;
+  z-index: -1;
+  transition: width 0.3s ease;
+}
+
+.btn-border-reveal:hover::after {
+  width: 100%;
+}
+
+.btn-border-reveal:hover {
+  color: black;
+}
+
 
 /* Utility classes */
 .port-bg {
@@ -161,3 +202,75 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  animation: marquee 20s linear infinite;
+}
+
+.btn {
+  position: relative;
+  padding: 1.5rem 3rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  background: none;
+  border: none;;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  min-width: 200px;
+  z-index: 1;
+  border-radius: 8px;
+}
+
+.neon-pulse {
+  background: #000;
+  border: 1px solid  #51a2ff;
+  box-shadow: 0 0 10px #51a2ff;
+  position: relative;
+  overflow: visible;
+}
+
+.neon-pulse::before,
+.neon-pulse::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border: 1px solid #51a2ff;
+  opacity: 60%;
+  border-radius: inherit;
+  animation: pulseOut 1s ease-out infinite;
+  opacity: 0;
+}
+
+.neon-pulse::after {
+  animation-delay: 1s;
+}
+
+@keyframes pulseOut {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.1);
+    opacity: 0;
+  }
+}
+
+@theme inline {
+  --animate-scroll: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
+ 
+  @keyframes scroll {
+    to {
+      transform: translate(calc(-50% - 0.5rem));
+    }
+  }
+}
+
+
