@@ -274,11 +274,3 @@ body {
     }
   }
 }
-
-
-.bg-main {
-  background-color: #000000;
-  background-image: radial-gradient(#6c80cc 2px, transparent 2px), radial-gradient(#6c80cc 2px, #000000 2px);
-  background-size: 80px 80px;
-  background-position: 0 0, 40px 40px;
-}
