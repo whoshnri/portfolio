@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${ibmPlexMono.variable} antialiased py-9 px-3 cursor-none`}>
-        <BackgroundBeams  className="fixed inset-0" />
+        {/* <BackgroundBeams  className="fixed inset-0" /> */}
         <CustomCursor />
         {children}
       </body>
