@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
-import { BackgroundBeams } from "./components/Beams";
+// import { BackgroundBeams } from "./components/Beams";
 import CustomCursor from "@/components/CustomCursor";
 
 const ibmPlexMono = IBM_Plex_Mono({
