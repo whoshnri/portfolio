@@ -184,8 +184,7 @@ const PortfolioSections = () => {
             </CardHeader>
             <CardContent className="text-gray-300 text-sm flex flex-col gap-3 justify-between h-full">
               <p>
-                Enrolled in the NVIDIA Deep Learning program, expected to
-                complete in the next few months.
+                Completed an Introduction to Deep Learning course in the NVIDIA Deep Learning program.
               </p>
               <Button
                 onClick={() => handleDownload("/nvidia_cert.pdf")}
