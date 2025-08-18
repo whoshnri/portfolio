@@ -87,7 +87,8 @@ const Projects: Projj[] = [
     stack: [
       "Flask",
       "Gemini API",
-      "Langgraph",
+      "LangGraph",
+      "LangChain",
       "Python",
       "HTML",
       "CSS",
@@ -101,10 +102,25 @@ const Projects: Projj[] = [
 ];
 
 const PortfolioSections = () => {
+  function handleDownload(path: string) {
+    const link = document.createElement("a");
+    link.href = path;
+    link.download = ""; // let browser use filename from server
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
   return (
     <div className="mx-auto">
       {/* Skills */}
-      <InfiniteMovingCards items={skills} direction="right" speed="normal" pauseOnHover className="max-w-lg mx-auto"/>
+      <InfiniteMovingCards
+        items={skills}
+        direction="right"
+        speed="normal"
+        pauseOnHover
+        className="max-w-lg mx-auto"
+      />
       <section className=" max-w-4xl mx-auto my-32">
         <span className="flex items-center gap-3 py-5">
           <span className="h-px flex-1 pe-4 "></span>
@@ -172,9 +188,9 @@ const PortfolioSections = () => {
                 complete in the next few months.
               </p>
               <Button
-                disabled
+                onClick={() => handleDownload("/nvidia_cert.pdf")}
                 variant="outline"
-                className="rounded-full hover:bg-gray-200 hover:text-black"
+                className="rounded-full hover:bg-gray-200 hover:text-black cursor-none"
               >
                 View Certificate
               </Button>
