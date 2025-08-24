@@ -87,7 +87,7 @@ const Projects: Projj[] = [
     stack: ["Next.js", "Shadcn UI", "Tailwind CSS"],
     desc: "A personal portfolio for a fashion designer and artist.",
     github: "https://github.com/whoshnri/emakay",
-    live: "http://itsemakay.vercel.app/",
+    live: "http://emakay.vercel.app/",
     done: false,
   },
   {
