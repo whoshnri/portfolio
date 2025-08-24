@@ -107,7 +107,7 @@ const Projects: Projj[] = [
       "TypeScript",
     ],
     desc: "A chatbot for Yaba College of Technology. Built by the YDTA Chatbot Team. I contributed to the LangGraph integration and backend development. Project in Beta.",
-    github: "https://github.com/whoshnri/yct_chatbot",
+    github: "https://github.com/whoshnri/yctbot_backend",
     live: "https://yctbot-frontend.vercel.app/",
     done: true,
   },
