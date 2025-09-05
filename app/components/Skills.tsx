@@ -191,7 +191,7 @@ const PortfolioSections = () => {
           <Card className="rounded-3xl border border-gray-700 bg-neutral-950">
             <CardHeader>
               <CardTitle className="text-lg font-semibold">
-                NVIDIA Deep Learning Program
+                Deep Learning Fundamentals
               </CardTitle>
             </CardHeader>
             <CardContent className="text-gray-300 text-sm flex flex-col gap-3 justify-between h-full">
@@ -200,6 +200,28 @@ const PortfolioSections = () => {
               </p>
               <Button
                 onClick={() => handleDownload("/nvidia_cert.pdf")}
+                variant="outline"
+                className="rounded-full hover:bg-gray-200 hover:text-black cursor-none"
+              >
+                View Certificate
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* NVIDIA DL Program */}
+          <Card className="rounded-3xl border border-gray-700 bg-neutral-950">
+            <CardHeader>
+              <CardTitle className="text-lg font-semibold">
+                Building RAG agents with LLMS
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="text-gray-300 text-sm flex flex-col gap-3 justify-between h-full">
+              <p>
+               A deep dive into RAG architecture using LLMs and LangChain; By NVIDIA
+              </p>
+              <Button
+                // onClick={() => handleDownload("/nvidia_cert.pdf")}
+                disabled
                 variant="outline"
                 className="rounded-full hover:bg-gray-200 hover:text-black cursor-none"
               >

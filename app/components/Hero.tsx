@@ -30,7 +30,7 @@ export default function Hero() {
           </p>
 
           <a
-            href="/resume.pdf"
+            href="/henrybassey.pdf"
             download
             className="inline-flex items-center gap-3 btn-border-reveal px-8 py-4 rounded-full text-sm font-medium  transition cursor-none"
           >

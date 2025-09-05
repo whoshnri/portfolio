@@ -37,7 +37,7 @@ const socialLinks = [
   },
 ];
 
-export default function Header() {
+export default function Pager() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   return (
