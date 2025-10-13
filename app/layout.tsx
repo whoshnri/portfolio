@@ -1,18 +1,71 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
-// import { BackgroundBeams } from "./components/Beams";
 import CustomCursor from "@/components/CustomCursor";
 
 const ibmPlexMono = IBM_Plex_Mono({
   variable: "--font-plex-mono",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "700"], // Add 300 for font-light
+  weight: ["300", "400", "500", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "Meet Henry!",
-  description: "Web developer, code lover!",
+  title: {
+    default: "Henry Bassey",
+    template: "%s | Henry Bassey",
+  },
+  description: "Henry Bassey — Software Engineer crafting clean, performant and modern web experiences.",
+  keywords: [
+    "Henry Bassey",
+    "Software Engineer",
+    "Frontend Developer",
+    "Fullstack Developer",
+    "Next.js",
+    "React",
+    "Tailwind CSS",
+    "Web Developer Portfolio",
+  ],
+  authors: [{ name: "Henry Bassey" }],
+  creator: "Henry Bassey",
+  publisher: "Henry Bassey",
+  openGraph: {
+    title: "Henry Bassey — Software Engineer",
+    description: "Software Engineer and AI enthusiast.",
+    url: "https://henrybassey.me",
+    siteName: "Henry Bassey",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Henry Bassey Portfolio",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Henry Bassey — Software Engineer",
+    description: "Crafting clean, performant, and modern web experiences.",
+    creator: "@xyz_07hb",
+    images: ["/og-image.png"],
+  },
+  metadataBase: new URL("https://henrybassey.me"),
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
+  },
+  alternates: {
+    canonical: "https://henrybassey.me",
+  },
 };
 
 export default function RootLayout({
@@ -21,9 +74,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${ibmPlexMono.variable} antialiased py-9 px-3 cursor-none `}>
-        {/* <BackgroundBeams  className="fixed inset-0" /> */}
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* Favicon + Additional SEO Tags */}
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="theme-color" content="#000000" />
+      </head>
+      <body
+        className={`${ibmPlexMono.variable} antialiased py-9 px-3 cursor-none`}
+      >
         <CustomCursor />
         {children}
       </body>

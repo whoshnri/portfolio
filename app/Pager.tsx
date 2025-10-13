@@ -42,7 +42,7 @@ export default function Pager() {
 
   return (
     <>
-      <div className="lg:flex relative gap-2 mx-auto hidden items-start px-4">
+      <div className="lg:flex relative gap-2 mx-auto hidden items-start z-50 px-4">
         <nav className="w-[100px] flex flex-col items-center sticky top-[5vh] pb-10 justify-between h-[90vh]">
           <h1 className="text-lg font-semibold">
             Henry Bassey<span className="text-blue-400">.</span>

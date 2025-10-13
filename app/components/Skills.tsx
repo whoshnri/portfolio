@@ -11,7 +11,7 @@ import {
   FaGithub as Github,
 } from "react-icons/fa";
 
-import { SiLangchain } from "react-icons/si";
+import { SiLangchain, SiPrisma } from "react-icons/si";
 import {
   SiTypescript,
   SiTailwindcss,
@@ -23,6 +23,7 @@ import { InfiniteMovingCards } from "@/components/infinite-moving-cards";
 
 const skills = [
   { name: "Python", icon: FaPython, color: "#3776AB" },
+  { name: "Prisma", icon: SiPrisma, color: "#3776AB" },
   { name: "LangGraph", icon: SiLangchain, color: "#3776AB" },
   { name: "JavaScript", icon: FaJs, color: "#F7DF1E" },
   { name: "Flask", icon: SiFlask, color: "#ffffff" },
@@ -52,12 +53,20 @@ const Projects: Projj[] = [
     done: true,
   },
   {
-    name: "Craelo",
+    name: "The African Parent",
+    stack: ["Next.js", "Prisma", "NodeJs", "Tailwind CSS", "Shadcn UI", "MailerLite", "MailerSend", "Stripe"],
+    desc: "Revamped the official website of The African Parent, enhancing its design and functionality to improve user experience and engagement. Also added an admin dashboard for content management and analytics. It is currently being vetted by the client.",
+    github: "https://github.com/whoshnri/theafricanparent",
+    live: "https://theafricanparent.vercel.app/",
+    done: false,
+  },
+  {
+    name: "Craelo -- Prelaunch",
     stack: ["Next.js", "Stripe", "Firebase"],
     desc: "Prelaunch page for an eCommerce platform",
     github: "https://github.com/whoshnri/craelo",
     live: "https://craelo.vercel.app/",
-    done: false,
+    done: true,
   },
   {
     name: "KwizKit",
@@ -65,6 +74,9 @@ const Projects: Projj[] = [
       "Next.js",
       "Neon PostgreSQL",
       "NodeJS",
+      "Prisma",
+      "TypeScript",
+      "Tailwind CSS",
       "LangGraph",
       "Fast API",
       "Google Gemini",
@@ -76,7 +88,7 @@ const Projects: Projj[] = [
   },
   {
     name: "AnonX (Message Terminal)",
-    stack: ["Next.js", "Neon PostgreSQL", "NodeJS", "Tailwind CSS"],
+    stack: ["Next.js", "Neon PostgreSQL", "NodeJS", "Tailwind CSS", "Prisma"],
     desc: "A terminal-style anonymous messaging platform with sharable links.",
     github: "https://github.com/whoshnri/anonx",
     live: "http://app-anonx.vercel.app/",
@@ -98,7 +110,6 @@ const Projects: Projj[] = [
       "LangGraph",
       "LangChain",
       "Python",
-      "Flask",
       "Docker (Basics)",
       "Next.js",
       "PostgreSQL",
@@ -209,7 +220,7 @@ const PortfolioSections = () => {
           </Card>
 
           {/* NVIDIA DL Program */}
-          <Card className="rounded-3xl border border-gray-700 bg-neutral-950">
+          {/* <Card className="rounded-3xl border border-gray-700 bg-neutral-950">
             <CardHeader>
               <CardTitle className="text-lg font-semibold">
                 Building RAG agents with LLMS
@@ -228,7 +239,7 @@ const PortfolioSections = () => {
                 View Certificate
               </Button>
             </CardContent>
-          </Card>
+          </Card> */}
         </div>
       </section>
 
