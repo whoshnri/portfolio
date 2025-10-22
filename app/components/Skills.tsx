@@ -47,7 +47,7 @@ const Projects: Projj[] = [
   {
     name: "Quilled Blog App",
     stack: ["React", "Tiptap", "Flask", "PostgreSQL"],
-    desc: "A full-stack blog with rich text editing, user auth, and admin tools.",
+    desc: "A full-stack blog with rich text editing, user auth, and admin tools. Built with React, Tiptap, Flask, and PostgreSQL. Features include creating, editing, deleting posts, user registration/login, and an admin dashboard for managing content and users.",
     github: "https://github.com/whoshnri/quilled",
     live: "https://quilled-5su6.onrender.com/",
     done: true,
@@ -63,7 +63,7 @@ const Projects: Projj[] = [
   {
     name: "Craelo -- Prelaunch",
     stack: ["Next.js", "Stripe", "Firebase"],
-    desc: "Prelaunch page for an eCommerce platform",
+    desc: "Prelaunch page for an eCommerce platform. This project is currently in the prelaunch phase, focusing on building anticipation and collecting user interest before the full platform goes live. Expected to launch fully in Q3 2027.",
     github: "https://github.com/whoshnri/craelo",
     live: "https://craelo.vercel.app/",
     done: true,
@@ -81,7 +81,7 @@ const Projects: Projj[] = [
       "Fast API",
       "Google Gemini",
     ],
-    desc: "AI powered test creation, proctoring and student management system.",
+    desc: "AI powered test creation, proctoring and student management system. Built for educators to easily create tests and manage students. Features include AI-generated questions, automated proctoring, and detailed analytics. Currently in development.",
     github: "https://github.com/whoshnri/kwizkit",
     live: "http://kwizkit.tech/",
     done: false,
@@ -89,7 +89,7 @@ const Projects: Projj[] = [
   {
     name: "AnonX (Message Terminal)",
     stack: ["Next.js", "Neon PostgreSQL", "NodeJS", "Tailwind CSS", "Prisma"],
-    desc: "A terminal-style anonymous messaging platform with sharable links.",
+    desc: "A terminal-style anonymous messaging platform with sharable links. This project allows users to create a unique link where they can receive anonymous messages from others. Built with Next.js, Tailwind CSS, Prisma, and PostgreSQL.",
     github: "https://github.com/whoshnri/anonx",
     live: "http://app-anonx.vercel.app/",
     done: true,
@@ -97,7 +97,7 @@ const Projects: Projj[] = [
   {
     name: "EMAKAY - Portfolio",
     stack: ["Next.js", "Shadcn UI", "Tailwind CSS"],
-    desc: "A personal portfolio for a fashion designer and artist.",
+    desc: "A personal portfolio for a fashion designer and artist. He is a friend of mine and I built this to help showcase his work online and reach a wider audience. The site is still a work in progress as he continues to add more content and refine his brand.",
     github: "https://github.com/whoshnri/emakay",
     live: "http://emakay.vercel.app/",
     done: false,
@@ -120,6 +120,14 @@ const Projects: Projj[] = [
     desc: "A chatbot for Yaba College of Technology. Built by the YDTA Chatbot Team. I contributed to the LangGraph integration and backend development. Project in Beta.",
     github: "https://github.com/whoshnri/yctbot_backend",
     live: "https://yctbot-frontend.vercel.app/",
+    done: true,
+  },
+  {
+    name: "Chorus - Paid Voting System",
+    stack: ["Next.js", "Shadcn UI", "Tailwind CSS", "Prisma", "Paystack", "PostgreSQL", "TypeScript"],
+    desc: "A paid voting system built with Next.js, Prisma, Paystack Payment Gateway,  and PostgreSQL. This project allows users to create polls and vote on them after making a payment. It is currently live but stil l in its early stages.",
+    github: "https://github.com/whoshnri/paid-voting-website",
+    live: "http://play-chorus.vercel.app/",
     done: true,
   },
 ];

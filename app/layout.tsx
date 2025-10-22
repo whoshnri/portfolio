@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Mono } from "next/font/google";
+import { IBM_Plex_Mono, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import CustomCursor from "@/components/CustomCursor";
 
-const ibmPlexMono = IBM_Plex_Mono({
-  variable: "--font-plex-mono",
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
   subsets: ["latin"],
   weight: ["300", "400", "500", "700"],
 });
@@ -76,14 +76,13 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Favicon + Additional SEO Tags */}
         <link rel="icon" href="/favicon.ico" />
         <meta name="theme-color" content="#000000" />
       </head>
       <body
-        className={`${ibmPlexMono.variable} antialiased py-9 px-3 cursor-none`}
+        className={`${geistMono.variable} antialiased py-9 px-3 `}
       >
-        <CustomCursor />
+          <CustomCursor />
         {children}
       </body>
     </html>

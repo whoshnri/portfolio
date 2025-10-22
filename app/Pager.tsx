@@ -65,7 +65,7 @@ export default function Pager() {
           </div>
         </nav>
 
-        <main className="w-full">
+        <main className="w-full -z-20">
           <Hero />
           <About />
           <Skills />
@@ -155,7 +155,7 @@ export function SendMessagePopup({ isOpen, setIsOpen }: PopupProps) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-40 flex items-center justify-center bg-black/40 backdrop-blur-sm">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm">
       <div className="rounded-3xl backdrop-blur-lg shadow-xl w-[85%] max-w-95 p-6 animate-fadeIn border border-gray-700 relative">
         <h2 className="text-lg font-semibold text-white mb-2">
           Send a Message

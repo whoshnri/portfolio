@@ -5,7 +5,7 @@ import {  Download } from "lucide-react";
 
 export default function Hero() {
   return (
-     <section className="block lg:justify-around max-w-3xl mx-auto ">
+     <section className="block lg:justify-around max-w-3xl mx-auto">
         {/* Image */}
         <div className="max-sm:h-screen sm:py-32 grid grid-cols-1 items-center">
           <div>
