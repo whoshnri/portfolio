@@ -125,10 +125,19 @@ const Projects: Projj[] = [
   {
     name: "Chorus - Paid Voting System",
     stack: ["Next.js", "Shadcn UI", "Tailwind CSS", "Prisma", "Paystack", "PostgreSQL", "TypeScript"],
-    desc: "A paid voting system built with Next.js, Prisma, Paystack Payment Gateway,  and PostgreSQL. This project allows users to create polls and vote on them after making a payment. It is currently live but stil l in its early stages.",
+    desc: "A paid voting system built with Next.js, Prisma, Paystack Payment Gateway,  and PostgreSQL. This project allows users to create polls and vote on them after making a payment. It is currently built completely but legal considerations are still being addressed, hence the delay in full launch.",
     github: "https://github.com/whoshnri/paid-voting-website",
     live: "http://play-chorus.vercel.app/",
     done: true,
+  },
+  
+  {
+    name: "Smart IQ Living - Corporate Website",
+    stack: ["Next.js", "Shadcn UI", "Tailwind CSS", "Prisma", "Paystack", "PostgreSQL", "TypeScript"],
+    desc: "A smart home management system built with Next.js and GSAP. This project was a revamp and remodel of the existing website that was built on wordpress, with smoother animations and improved user experience.",
+    github: "https://github.com/whoshnri/smartiqliving",
+    live: "http://smartiqliving.vercel.app/",
+    done: false,
   },
 ];
 
