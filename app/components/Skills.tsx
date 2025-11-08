@@ -139,6 +139,14 @@ const Projects: Projj[] = [
     live: "http://smartiqliving.vercel.app/",
     done: false,
   },
+  {
+    name: "Collabs I'd Like To See",
+    stack: ["Next.js", "Shadcn UI", "Tailwind CSS", "Prisma", "PostgreSQL", "TypeScript"],
+    desc: "A platform to showcase potential collaborations and projects I'd like to see. Built with Next.js and Tailwind CSS.",
+    github: "https://github.com/whoshnri/cilts",
+    live: "http://cilts.vercel.app/",
+    done: false,
+  },
 ];
 
 const PortfolioSections = () => {
