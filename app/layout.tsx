@@ -82,7 +82,7 @@ export default function RootLayout({
       <body
         className={`${geistMono.variable} antialiased py-9 px-3 `}
       >
-          <CustomCursor />
+          {/* <CustomCursor /> */}
         {children}
       </body>
     </html>

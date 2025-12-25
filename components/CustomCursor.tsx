@@ -18,7 +18,7 @@ export default function CustomCursor() {
 
   return (
     <div
-      className="fixed pointer-events-none z-100 transform -translate-x-1/2 -translate-y-1/2"
+      className="fixed hidden md:block cursor-none pointer-events-none z-100 transform -translate-x-1/2 -translate-y-1/2"
       style={{
         left: position.x,
         top: position.y,

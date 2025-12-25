@@ -15,12 +15,6 @@ const socialLinks = [
     color: "hover:text-sky-400",
   },
   {
-    name: "Reddit",
-    icon: <FaRedditAlien className="w-5 h-5" />,
-    url: "https://reddit.com/user/xyz_07hb",
-    color: "hover:text-orange-500",
-  },
-  {
     name: "GitHub",
     icon: <FaGithub className="w-5 h-5" />,
     url: "https://github.com/whoshnri",

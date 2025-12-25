@@ -11,13 +11,14 @@ import {
   FaGithub as Github,
 } from "react-icons/fa";
 
-import { SiLangchain, SiPrisma } from "react-icons/si";
+import { SiLangchain, SiPrisma, SiGo } from "react-icons/si";
 import {
   SiTypescript,
   SiTailwindcss,
   SiNextdotjs,
   SiFlask,
 } from "react-icons/si";
+import { TbBrandReactNative } from "react-icons/tb";
 import { Clock, ExternalLink } from "lucide-react";
 import { InfiniteMovingCards } from "@/components/infinite-moving-cards";
 
@@ -29,8 +30,10 @@ const skills = [
   { name: "Flask", icon: SiFlask, color: "#ffffff" },
   { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
   { name: "React", icon: FaReact, color: "#61DAFB" },
+  { name: "React Native", icon: TbBrandReactNative, color: "#61DAFB" },
   { name: "Next.js", icon: SiNextdotjs, color: "#ffffff" },
   { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
+  { name: "Go", icon: SiGo, color: "#00ADD8" },
   { name: "Git", icon: FaGitAlt, color: "#F05032" },
 ];
 
@@ -44,6 +47,54 @@ type Projj = {
 };
 
 const Projects: Projj[] = [
+  {
+    name: "KwizHub",
+    stack: ["React Native", "Next.js", "Prisma", "PostgreSQL", "Tailwind CSS"],
+    desc: "A marketplace for educators to sell their curated study materials. Includes an app that lets students read the materials in a secure environment that makes piracy impossible. Built with React Native, Next.js, Prisma, and PostgreSQL.",
+    github: "https://github.com/whoshnri/kwizhub",
+    live: "https://kwizhub.vercel.app/",
+    done: true,
+  },
+  {
+    name: "Chorus - Voting Platform",
+    stack: ["Next.js", "Shadcn UI", "Tailwind CSS", "Prisma", "Paystack", "PostgreSQL", "TypeScript"],
+    desc: "The ultimate platform for paid voting and contests. Create, manage, and monetize virtual competitions with real-time results and seamless payment integration. Features transparent pay-as-you-go pricing with free trial options.",
+    github: "https://github.com/whoshnri/paid-voting-website",
+    live: "https://play-chorus.vercel.app/",
+    done: true,
+  },
+  {
+    name: "Smart IQ Living",
+    stack: ["Next.js", "GSAP", "Tailwind CSS", "TypeScript"],
+    desc: "Corporate website for a smart home automation company. Showcases comprehensive home automation solutions including security, lighting controls, audio-video systems, and IoT integration. Built with Next.js and GSAP for smooth animations.",
+    github: "https://github.com/whoshnri/smartiqliving",
+    live: "https://smartiqliving.com/",
+    done: true,
+  },
+  {
+    name: "Suprvillain Store",
+    stack: ["Next.js", "Tailwind CSS", "TypeScript"],
+    desc: "Modern e-commerce platform with effortless style and endless vibes. Features clean product displays, shopping cart functionality, and a minimalist aesthetic. Built for showcasing premium lifestyle products.",
+    github: "https://github.com/whoshnri/suprvillain",
+    live: "https://suprvillain.store/",
+    done: false,
+  },
+  {
+    name: "Collabs I'd Like To See",
+    stack: ["Next.js", "Shadcn UI", "Tailwind CSS", "Prisma", "PostgreSQL", "TypeScript"],
+    desc: "Platform to pitch dream collaborations and shape culture. Users can pitch ideas, upvote what matters, and help bring creative collaborations to life. Features a leaderboard, featured collabs, and community-driven content.",
+    github: "https://github.com/whoshnri/cilts",
+    live: "https://www.cilts.xyz/",
+    done: false,
+  },
+  {
+    name: "Modemen Magazine",
+    stack: ["Next.js", "Tailwind CSS", "Prisma", "PostgreSQL", "TypeScript"],
+    desc: "Fashion, lifestyle, and culture magazine celebrating 20 years of defining African masculinities. Features curated articles, exclusive interviews, events coverage, and an integrated shop for premium products.",
+    github: "https://github.com/whoshnri/modemen-magazine",
+    live: "https://modemenmag.vercel.app/",
+    done: false,
+  },
   {
     name: "Quilled Blog App",
     stack: ["React", "Tiptap", "Flask", "PostgreSQL"],
@@ -61,7 +112,7 @@ const Projects: Projj[] = [
     done: false,
   },
   {
-    name: "Craelo -- Prelaunch",
+    name: "Craelo - Prelaunch",
     stack: ["Next.js", "Stripe", "Firebase"],
     desc: "Prelaunch page for an eCommerce platform. This project is currently in the prelaunch phase, focusing on building anticipation and collecting user interest before the full platform goes live. Expected to launch fully in Q3 2027.",
     github: "https://github.com/whoshnri/craelo",
@@ -122,31 +173,6 @@ const Projects: Projj[] = [
     live: "https://yctbot-frontend.vercel.app/",
     done: true,
   },
-  {
-    name: "Chorus - Paid Voting System",
-    stack: ["Next.js", "Shadcn UI", "Tailwind CSS", "Prisma", "Paystack", "PostgreSQL", "TypeScript"],
-    desc: "A paid voting system built with Next.js, Prisma, Paystack Payment Gateway,  and PostgreSQL. This project allows users to create polls and vote on them after making a payment. It is currently built completely but legal considerations are still being addressed, hence the delay in full launch.",
-    github: "https://github.com/whoshnri/paid-voting-website",
-    live: "http://play-chorus.vercel.app/",
-    done: true,
-  },
-  
-  {
-    name: "Smart IQ Living - Corporate Website",
-    stack: ["Next.js", "Shadcn UI", "Tailwind CSS", "Prisma", "Paystack", "PostgreSQL", "TypeScript"],
-    desc: "A smart home management system built with Next.js and GSAP. This project was a revamp and remodel of the existing website that was built on wordpress, with smoother animations and improved user experience.",
-    github: "https://github.com/whoshnri/smartiqliving",
-    live: "http://smartiqliving.vercel.app/",
-    done: false,
-  },
-  {
-    name: "Collabs I'd Like To See",
-    stack: ["Next.js", "Shadcn UI", "Tailwind CSS", "Prisma", "PostgreSQL", "TypeScript"],
-    desc: "A platform to showcase potential collaborations and projects I'd like to see. Built with Next.js and Tailwind CSS.",
-    github: "https://github.com/whoshnri/cilts",
-    live: "http://cilts.vercel.app/",
-    done: false,
-  },
 ];
 
 const PortfolioSections = () => {
@@ -179,7 +205,7 @@ const PortfolioSections = () => {
         </span>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* YDTA */}
-          <Card className="rounded-3xl border border-gray-700 bg-neutral-950">
+          <Card className="rounded-3xl border border-gray-700 bg-neutral-950 z-20">
             <CardHeader>
               <CardTitle className="text-lg font-semibold">
                 Yabatech Digital Technology Academy
@@ -202,7 +228,7 @@ const PortfolioSections = () => {
           </Card>
 
           {/* YCT */}
-          <Card className="rounded-3xl border border-gray-700 bg-neutral-950">
+          <Card className="rounded-3xl border border-gray-700 bg-neutral-950 z-20">
             <CardHeader>
               <CardTitle className="text-lg font-semibold">
                 Yaba College of Technology (YCT)
@@ -224,7 +250,7 @@ const PortfolioSections = () => {
           </Card>
 
           {/* NVIDIA DL Program */}
-          <Card className="rounded-3xl border border-gray-700 bg-neutral-950">
+          <Card className="rounded-3xl border border-gray-700 bg-neutral-950 z-20">
             <CardHeader>
               <CardTitle className="text-lg font-semibold">
                 Deep Learning Fundamentals
@@ -282,7 +308,7 @@ const PortfolioSections = () => {
           {Projects.map((project) => (
             <div
               key={project.name}
-              className="flex flex-col gap-3 border hover:scale-105 border-gray-900 p-5 bg-gray-900/30 hover:bg-gray-900/60 transition-all rounded-3xl"
+              className="flex flex-col gap-3 border hover:scale-105 border-gray-900 p-5 bg-gray-900/30 hover:bg-gray-900/60 transition-all rounded-3xl z-20"
             >
               {/* Header */}
               <div className="flex justify-between items-start">
@@ -290,11 +316,10 @@ const PortfolioSections = () => {
                   {project.name}
                 </h2>
                 <span
-                  className={`flex items-center text-xs font-semibold px-2 py-1 rounded-full ${
-                    project.done
-                      ? "bg-green-900/50 text-green-400"
-                      : "bg-yellow-900/50 text-yellow-400"
-                  }`}
+                  className={`flex w-fit items-center text-xs font-semibold px-2 py-1 rounded-full ${project.done
+                    ? "bg-green-900/50 text-green-400"
+                    : "bg-yellow-900/50 text-yellow-400"
+                    }`}
                 >
                   {!project.done && <Clock size={12} className="mr-1.5" />}
                   {project.done ? "Completed" : "In Progress"}
@@ -318,19 +343,21 @@ const PortfolioSections = () => {
 
               {/* Links */}
               <div className="flex gap-4 mt-2 text-sm">
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex cursor-none items-center gap-1.5 text-gray-400 hover:text-cyan-400 transition-colors"
-                >
-                  <Github size={16} /> GitHub
-                </a>
+                {project.github && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1.5 text-gray-400 hover:text-cyan-400 transition-colors"
+                  >
+                    <Github size={16} /> GitHub
+                  </a>
+                )}
                 <a
                   href={project.live}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center cursor-none gap-1.5 text-gray-400 hover:text-cyan-400 transition-colors"
+                  className="flex items-center gap-1.5 text-gray-400 hover:text-cyan-400 transition-colors"
                 >
                   <ExternalLink size={16} /> Live
                 </a>
