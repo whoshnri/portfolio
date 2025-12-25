@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  FaRedditAlien,
   FaGithub,
   FaDiscord,
 } from "react-icons/fa";
