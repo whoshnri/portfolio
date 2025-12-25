@@ -3,11 +3,10 @@ export default function About() {
     <section className="max-w-3xl mx-auto px-4 py-16">
       <h2 className="text-3xl font-bold mb-6">About Me</h2>
       <p className="lg:text-lg text-base leading-relaxed text-gray-400 mb-4">
-        I&apos;m an 18 year old, passionate self taught developer.
+        I&apos;m an 18 year old Fullstack Developer.
       </p>
       <p className="lg:text-lg text-base leading-relaxed text-gray-400 mb-4">
-        Over the years, I&apos;ve developed web apps, RAG pipelines for chatbots, console games with python and class projects using advance data strutures. I believe in continuous learning and staying ahead of the 
-        latest industry trends.
+        Over the years, I&apos;ve developed web apps, RAG pipelines for chatbots, console games with python and class projects using advance data strutures, Corporate websites and lots of other projects that test my skills. I believe in continuous learning and staying ahead of the latest industry trends.
       </p>
       <p className="lg:text-lg text-base leading-relaxed text-gray-400">
         When I&apos;m not coding, you&apos;ll find me exploring new tech concepts, contributing 

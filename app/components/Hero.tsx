@@ -22,10 +22,10 @@ export default function Hero() {
         {/* Text Content */}
         <div className="space-y-8 col-span-2 text-left">
           <h1 className="text-4xl my-5 font-extralight text-white tracking-tight">
-           Developer <span className="text-blue-400">.</span> Learner
+          Fullstack Developer <span className="text-blue-400">.</span>
           </h1>
           <p className="text-gray-300 text-base lg:text-lg max-w-lg">
-            Passionate about learning, building, and contributing to society in
+            Passionate Fullstack Develope. Currently learning, building, and contributing to society in
             <span className="italic text-blue-400 font-medium"> full capacity</span>.
           </p>
 
