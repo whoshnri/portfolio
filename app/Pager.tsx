@@ -4,11 +4,12 @@ import Hero from "@/app/components/Hero";
 import Skills from "./components/Skills";
 import Footer from "./components/Footer";
 import { MailIcon } from "lucide-react";
-import About from "./About";
+import About from "./components/About";
 
 import { FaGithub, FaDiscord } from "react-icons/fa";
 
 import { BsTwitterX } from "react-icons/bs";
+import Testimonails from "./components/Testimonails";
 
 const socialLinks = [
   {
@@ -22,13 +23,7 @@ const socialLinks = [
     icon: <FaGithub className="w-4 h-4" />,
     url: "https://github.com/whoshnri",
     color: "hover:text-gray-300",
-  },
-  {
-    name: "Discord",
-    icon: <FaDiscord className="w-4 h-4" />,
-    url: "https://discord.com/users/whoshnri",
-    color: "hover:text-indigo-400",
-  },
+  }
 ];
 
 export default function Pager() {
@@ -63,6 +58,7 @@ export default function Pager() {
           <Hero />
           <About />
           <Skills />
+          <Testimonails/>
           <Footer />
         </main>
 
@@ -94,6 +90,7 @@ export default function Pager() {
           <Hero />
           <About />
           <Skills />
+          <Testimonails/>
           <Footer />
         </main>
       </div>

@@ -18,13 +18,7 @@ const socialLinks = [
     icon: <FaGithub className="w-5 h-5" />,
     url: "https://github.com/whoshnri",
     color: "hover:text-gray-300",
-  },
-  {
-    name: "Discord",
-    icon: <FaDiscord className="w-5 h-5" />,
-    url: "https://discord.com/users/whoshnri",
-    color: "hover:text-indigo-400",
-  },
+  }
 ];
 
 export default function Footer() {

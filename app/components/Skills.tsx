@@ -51,7 +51,7 @@ const Projects: Projj[] = [
     name: "KwizHub",
     stack: ["React Native", "Next.js", "Prisma", "PostgreSQL", "Tailwind CSS"],
     desc: "A marketplace for educators to sell their curated study materials. Includes an app that lets students read the materials in a secure environment that makes piracy impossible. Built with React Native, Next.js, Prisma, and PostgreSQL.",
-    github: "https://github.com/whoshnri/kwizhub",
+    github: "",
     live: "https://kwizhub.vercel.app/",
     done: true,
   },
@@ -59,7 +59,7 @@ const Projects: Projj[] = [
     name: "Chorus - Voting Platform",
     stack: ["Next.js", "Shadcn UI", "Tailwind CSS", "Prisma", "Paystack", "PostgreSQL", "TypeScript"],
     desc: "The ultimate platform for paid voting and contests. Create, manage, and monetize virtual competitions with real-time results and seamless payment integration. Features transparent pay-as-you-go pricing with free trial options.",
-    github: "https://github.com/whoshnri/paid-voting-website",
+    github: "",
     live: "https://play-chorus.vercel.app/",
     done: true,
   },
@@ -67,7 +67,7 @@ const Projects: Projj[] = [
     name: "Smart IQ Living",
     stack: ["Next.js", "GSAP", "Tailwind CSS", "TypeScript"],
     desc: "Corporate website for a smart home automation company. Showcases comprehensive home automation solutions including security, lighting controls, audio-video systems, and IoT integration. Built with Next.js and GSAP for smooth animations.",
-    github: "https://github.com/whoshnri/smartiqliving",
+    github: "",
     live: "https://smartiqliving.com/",
     done: true,
   },
@@ -75,7 +75,7 @@ const Projects: Projj[] = [
     name: "Suprvillain Store",
     stack: ["Next.js", "Tailwind CSS", "TypeScript"],
     desc: "Modern e-commerce platform with effortless style and endless vibes. Features clean product displays, shopping cart functionality, and a minimalist aesthetic. Built for showcasing premium lifestyle products.",
-    github: "https://github.com/whoshnri/suprvillain",
+    github: "",
     live: "https://suprvillain.store/",
     done: false,
   },
@@ -83,7 +83,7 @@ const Projects: Projj[] = [
     name: "Collabs I'd Like To See",
     stack: ["Next.js", "Shadcn UI", "Tailwind CSS", "Prisma", "PostgreSQL", "TypeScript"],
     desc: "Platform to pitch dream collaborations and shape culture. Users can pitch ideas, upvote what matters, and help bring creative collaborations to life. Features a leaderboard, featured collabs, and community-driven content.",
-    github: "https://github.com/whoshnri/cilts",
+    github: "",
     live: "https://www.cilts.xyz/",
     done: false,
   },
@@ -91,7 +91,7 @@ const Projects: Projj[] = [
     name: "Modemen Magazine",
     stack: ["Next.js", "Tailwind CSS", "Prisma", "PostgreSQL", "TypeScript"],
     desc: "Fashion, lifestyle, and culture magazine celebrating 20 years of defining African masculinities. Features curated articles, exclusive interviews, events coverage, and an integrated shop for premium products.",
-    github: "https://github.com/whoshnri/modemen-magazine",
+    github: "",
     live: "https://modemenmag.vercel.app/",
     done: false,
   },
@@ -107,8 +107,8 @@ const Projects: Projj[] = [
     name: "The African Parent",
     stack: ["Next.js", "Prisma", "NodeJs", "Tailwind CSS", "Shadcn UI", "MailerLite", "MailerSend", "Stripe"],
     desc: "Revamped the official website of The African Parent, enhancing its design and functionality to improve user experience and engagement. Also added an admin dashboard for content management and analytics. It is currently being vetted by the client.",
-    github: "https://github.com/whoshnri/theafricanparent",
-    live: "https://theafricanparent.vercel.app/",
+    github: "",
+    live: "https://theafricanparent.org/",
     done: false,
   },
   {
@@ -133,7 +133,7 @@ const Projects: Projj[] = [
       "Google Gemini",
     ],
     desc: "AI powered test creation, proctoring and student management system. Built for educators to easily create tests and manage students. Features include AI-generated questions, automated proctoring, and detailed analytics. Currently in development.",
-    github: "https://github.com/whoshnri/kwizkit",
+    github: "",
     live: "http://kwizkit.tech/",
     done: false,
   },
@@ -141,7 +141,7 @@ const Projects: Projj[] = [
     name: "AnonX (Message Terminal)",
     stack: ["Next.js", "Neon PostgreSQL", "NodeJS", "Tailwind CSS", "Prisma"],
     desc: "A terminal-style anonymous messaging platform with sharable links. This project allows users to create a unique link where they can receive anonymous messages from others. Built with Next.js, Tailwind CSS, Prisma, and PostgreSQL.",
-    github: "https://github.com/whoshnri/anonx",
+    github: "",
     live: "http://app-anonx.vercel.app/",
     done: true,
   },
@@ -149,7 +149,7 @@ const Projects: Projj[] = [
     name: "EMAKAY - Portfolio",
     stack: ["Next.js", "Shadcn UI", "Tailwind CSS"],
     desc: "A personal portfolio for a fashion designer and artist. He is a friend of mine and I built this to help showcase his work online and reach a wider audience. The site is still a work in progress as he continues to add more content and refine his brand.",
-    github: "https://github.com/whoshnri/emakay",
+    github: "",
     live: "http://emakay.vercel.app/",
     done: false,
   },
@@ -197,9 +197,8 @@ const PortfolioSections = () => {
       />
       <section className=" max-w-4xl mx-auto my-32">
         <span className="flex items-center gap-3 py-5">
-          <span className="h-px flex-1 pe-4 "></span>
 
-          <span className="shrink-0  text-3xl font-mono text-white">
+          <span className="shrink-0 text-3xl font-mono text-white">
             Education
           </span>
         </span>
@@ -295,12 +294,10 @@ const PortfolioSections = () => {
       </section>
 
       {/* Projects */}
-      <section className=" py-6 lg:px-6 max-w-4xl mx-auto">
+      <section className=" py-6 max-w-4xl mx-auto">
         <span className="flex p-5 gap-2 w-full items-center font-mono">
-          <span className="h-px flex-1"></span>
 
-          <span className="shrink-0w-fit text-3xl text-white">Projects</span>
-          <span className="h-px flex-1"></span>
+          <span className="shrink-0 w-fit text-3xl text-white">Projects</span>
         </span>
 
         {/* Card Grid */}
@@ -308,7 +305,7 @@ const PortfolioSections = () => {
           {Projects.map((project) => (
             <div
               key={project.name}
-              className="flex flex-col gap-3 border hover:scale-105 border-gray-900 p-5 bg-gray-900/30 hover:bg-gray-900/60 transition-all rounded-3xl z-20"
+              className="flex flex-col gap-3 border border-gray-900 p-5 bg-gray-900/30 hover:bg-gray-900/60 transition-all rounded-3xl z-20"
             >
               {/* Header */}
               <div className="flex justify-between items-start">

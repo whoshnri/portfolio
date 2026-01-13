@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <section className="max-w-3xl mx-auto px-4 py-16">
+    <section className="max-w-4xl mx-auto  py-16">
       <h2 className="text-3xl font-bold mb-6">About Me</h2>
       <p className="lg:text-lg text-base leading-relaxed text-gray-400 mb-4">
         I&apos;m an 18 year old Fullstack Developer.
