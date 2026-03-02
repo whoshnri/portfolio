@@ -1,65 +1,66 @@
 import type { Metadata } from "next";
-import { Geist_Mono } from "next/font/google";
+import { Playfair_Display, DM_Sans } from "next/font/google";
 import "./globals.css";
+import Nav from "@/components/Nav";
+import Footer from "@/app/components/Footer";
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const playfairDisplay = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-playfair",
+  display: "swap",
+});
+
+const dmSans = DM_Sans({
   subsets: ["latin"],
   weight: ["300", "400", "500", "700"],
+  variable: "--font-dmsans",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: {
-    default: "Henry Bassey",
-    template: "%s | Henry Bassey",
-  },
-  description: "Henry Bassey — Software Engineer crafting clean, performant and modern web experiences.",
+  title: "Henry Bassey | Founder, Quill Labs",
+  description: "Building software from Lagos. Writing about it on the internet.",
   keywords: [
     "Henry Bassey",
+    "Quill Labs",
     "Software Engineer",
-    "Frontend Developer",
-    "Fullstack Developer",
-    "Next.js",
+    "Founder",
+    "Lagos",
     "React",
-    "Tailwind CSS",
-    "Web Developer Portfolio",
+    "Next.js"
   ],
   authors: [{ name: "Henry Bassey" }],
   creator: "Henry Bassey",
   publisher: "Henry Bassey",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   openGraph: {
-    title: "Henry Bassey — Software Engineer",
-    description: "Software Engineer and AI enthusiast.",
+    title: "Henry Bassey | Founder, Quill Labs",
+    description: "Building software from Lagos. Writing about it on the internet.",
     url: "https://henrybassey.me",
     siteName: "Henry Bassey",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Henry Bassey Portfolio",
-      },
-    ],
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Henry Bassey — Software Engineer",
-    description: "Crafting clean, performant, and modern web experiences.",
+    title: "Henry Bassey | Founder, Quill Labs",
+    description: "Building software from Lagos. Writing about it on the internet.",
     creator: "@xyz_07hb",
-    images: ["/og-image.png"],
   },
-  metadataBase: new URL("https://henrybassey.me"),
   robots: {
     index: true,
     follow: true,
     googleBot: {
       index: true,
       follow: true,
-      "max-snippet": -1,
       "max-image-preview": "large",
-      "max-video-preview": -1,
+      "max-snippet": -1,
     },
   },
   alternates: {
@@ -73,16 +74,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <head>
-        <link rel="icon" href="/favicon.ico" />
-        <meta name="theme-color" content="#000000" />
-      </head>
-      <body
-        className={`${geistMono.variable} antialiased py-9 px-3 `}
-      >
-          {/* <CustomCursor /> */}
-        {children}
+    <html lang="en" className={`${playfairDisplay.variable} ${dmSans.variable}`}>
+      <body className="antialiased font-dmsans font-light text-(--craft-text) bg-(--craft-bg)">
+        <div className="flex flex-col lg:flex-row min-h-screen">
+          <Nav />
+          <div className="flex flex-col min-h-screen flex-1 w-full max-w-7xl mx-auto">
+            <main className="flex-1 w-full flex flex-col items-center">
+              {children}
+            </main>
+            {/* <Footer /> */}
+          </div>
+        </div>
       </body>
     </html>
   );

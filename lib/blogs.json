@@ -1,0 +1,38 @@
+[
+  {
+    "slug": "why-i-build-in-public",
+    "heading": "Why I Build in Public",
+    "date": "2025-02-10",
+    "blocks": [
+      "<p>There's a version of building things where you work quietly, perfect everything behind closed doors, and only show the world a finished product. I tried that. It felt like shouting into a room with the door closed.</p>",
+      "<p>Building in public is uncomfortable in the best way. When you share what you're working on before it's ready, you invite feedback you didn't ask for, comparisons you didn't want, and the occasional person who genuinely needed exactly what you were making. That last part makes the rest worth it.</p>",
+      "<p>With KwizHub, I started talking about it while I was still figuring out the database schema. Some people laughed at the idea. Some asked when they could sign up. Both reactions told me something useful — that the idea had edges sharp enough to produce a reaction. Bland ideas get polite silence.</p>",
+      "<p>I'm not saying post every bug or overshare every doubt. I'm saying: don't wait until you're ready, because ready is a moving target. Ship something. Say something. See what happens. The feedback loop is the whole point.</p>",
+      "<p>If you're building something right now and keeping it secret, consider letting one person see it this week. Just one. The world doesn't have to know — but someone should.</p>"
+    ]
+  },
+  {
+    "slug": "what-lagos-taught-me-about-software",
+    "heading": "What Lagos Taught Me About Software",
+    "date": "2025-02-24",
+    "blocks": [
+      "<p>Lagos doesn't let you be theoretical for long. Everything here is immediate — the traffic, the noise, the pace at which things break and get fixed and break again. Growing up here taught me that solutions have to work <em>now</em>, not in ideal conditions.</p>",
+      "<p>I think about this every time I'm building something. The user on the other end of my software might have 2G internet, a phone from four years ago, and three seconds of patience before they close the tab. That's not a hypothetical. That's a Tuesday.</p>",
+      "<p>So I build lighter. I obsess over load times. I think about what the experience feels like when the network drops mid-request. I try to make error states feel like a helpful hand, not a wall. None of this came from a course. It came from watching people try to use things and fail, and feeling personally responsible for that failure.</p>",
+      "<p>There's a lot of energy in the tech scene here right now — people building real things for real problems, not chasing what's trending in San Francisco. I find that grounding. It keeps the work honest.</p>",
+      "<p>Lagos will humble you fast if you get arrogant about what you've made. I'm grateful for that. It keeps me building things that actually work, for people who actually need them.</p>"
+    ]
+  },
+  {
+    "slug": "the-ceo-title-at-18",
+    "heading": "The CEO Title at 18",
+    "date": "2025-03-01",
+    "blocks": [
+      "<p>When I started calling myself the CEO of Quill Labs, I half-expected someone to pull me aside and tell me I needed to earn that title first. Nobody did. What I got instead were questions — good ones. <em>What does Quill Labs do? What are you building? Where is this going?</em></p>",
+      "<p>I started the company because I kept building things that didn't have a home. KwizHub was a product. Chorus was a product. I needed something to put them under — a name that said: these aren't side projects, they're deliberate. Quill Labs became that container.</p>",
+      "<p>The title isn't a vanity thing. It's a commitment device. When you say you're the CEO of something, you start making decisions differently. You think about sustainability, not just functionality. You think about what the company represents, not just what the product does. It changed how I work.</p>",
+      "<p>I'm 18. I don't have investors or a team of twenty. But I have two live products, real users, and a clear sense of what I'm trying to build. I think that counts. And if it doesn't yet, I'll make it count.</p>",
+      "<p>The work is the credential. I'm focused on the work.</p>"
+    ]
+  }
+]

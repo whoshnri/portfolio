@@ -8,7 +8,7 @@ import {
   FaReact,
   FaPython,
   FaGitAlt,
-  FaGithub as Github,
+  FaGithub,
 } from "react-icons/fa";
 
 import { SiLangchain, SiPrisma, SiGo } from "react-icons/si";
@@ -19,7 +19,7 @@ import {
   SiFlask,
 } from "react-icons/si";
 import { TbBrandReactNative } from "react-icons/tb";
-import { Clock, ExternalLink } from "lucide-react";
+import { Clock, ExternalLink, Github as LucideGithub } from "lucide-react";
 import { InfiniteMovingCards } from "@/components/infinite-moving-cards";
 
 const skills = [
@@ -33,7 +33,6 @@ const skills = [
   { name: "React Native", icon: TbBrandReactNative, color: "#61DAFB" },
   { name: "Next.js", icon: SiNextdotjs, color: "#ffffff" },
   { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
-  { name: "Go", icon: SiGo, color: "#00ADD8" },
   { name: "Git", icon: FaGitAlt, color: "#F05032" },
 ];
 
@@ -175,7 +174,84 @@ const Projects: Projj[] = [
   },
 ];
 
+const ProjectCard = ({ project, index, expanded, onToggle }: { project: Projj; index: number; expanded: boolean; onToggle: () => void }) => {
+  return (
+    <div
+      className={`flex flex-col border border-gray-900 p-5 bg-gray-900/30 hover:bg-gray-900/60 transition-all duration-500 ease-in-out rounded-none z-20 ${expanded ? "gap-4" : "gap-0"}`}
+      style={{ animationDelay: `${index * 100}ms` }}
+    >
+      {/* Minimal Header */}
+      <div className="flex justify-between items-center w-full cursor-pointer" onClick={onToggle}>
+        <div className="flex items-center gap-3">
+          <h2 className="text-lg font-medium text-gray-100 font-sans tracking-wide">
+            {project.name}
+          </h2>
+          <span
+            className={`flex w-fit items-center text-[10px] uppercase tracking-wider font-semibold px-2 py-0.5 rounded-none ${project.done
+              ? "bg-green-900/30 text-green-400"
+              : "bg-yellow-900/30 text-yellow-500"
+              }`}
+          >
+            {project.done ? "Done" : "WIP"}
+          </span>
+        </div>
+        <button
+          className="text-xs font-mono text-gray-500 hover:text-white transition-colors"
+        >
+          {expanded ? "[ - ]" : "[ + ]"}
+        </button>
+      </div>
+
+      {/* Expandable Details */}
+      <div
+        className={`overflow-hidden transition-all duration-500 ease-in-out flex flex-col gap-4 ${expanded ? "max-h-[500px] opacity-100 mt-2" : "max-h-0 opacity-0 m-0"
+          }`}
+      >
+        <p className="text-sm text-gray-400 font-sans leading-relaxed border-l-2 border-gray-800 pl-4">{project.desc}</p>
+
+        <div className="flex flex-wrap gap-2">
+          {project.stack.map((tech) => (
+            <span
+              key={tech}
+              className="text-gray-500 text-xs font-mono border border-gray-800 px-2 py-1 rounded-none"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+
+        <div className="flex gap-4 mt-2 text-sm font-mono">
+          {project.github && (
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 text-gray-500 hover:text-white transition-colors"
+            >
+              <LucideGithub size={14} /> source
+            </a>
+          )}
+          <a
+            href={project.live}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 text-gray-500 hover:text-white transition-colors"
+          >
+            <ExternalLink size={14} /> live
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const PortfolioSections = () => {
+  const [expandedIndex, setExpandedIndex] = React.useState<number | null>(null);
+
+  function handleToggle(index: number) {
+    setExpandedIndex(expandedIndex === index ? null : index);
+  }
+
   function handleDownload(path: string) {
     const link = document.createElement("a");
     link.href = path;
@@ -204,7 +280,7 @@ const PortfolioSections = () => {
         </span>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* YDTA */}
-          <Card className="rounded-3xl border border-gray-700 bg-neutral-950 z-20">
+          <Card className="rounded-none border border-gray-700 bg-neutral-950 z-20">
             <CardHeader>
               <CardTitle className="text-lg font-semibold">
                 Yabatech Digital Technology Academy
@@ -219,7 +295,7 @@ const PortfolioSections = () => {
               <Button
                 disabled
                 variant="outline"
-                className="rounded-full hover:bg-gray-200 hover:text-black"
+                className="rounded-none hover:bg-gray-200 hover:text-black"
               >
                 View Certificate
               </Button>
@@ -227,7 +303,7 @@ const PortfolioSections = () => {
           </Card>
 
           {/* YCT */}
-          <Card className="rounded-3xl border border-gray-700 bg-neutral-950 z-20">
+          <Card className="rounded-none border border-gray-700 bg-neutral-950 z-20">
             <CardHeader>
               <CardTitle className="text-lg font-semibold">
                 Yaba College of Technology (YCT)
@@ -241,7 +317,7 @@ const PortfolioSections = () => {
               <Button
                 disabled
                 variant="outline"
-                className="rounded-full hover:bg-gray-200 hover:text-black"
+                className="rounded-none hover:bg-gray-200 hover:text-black"
               >
                 View Certificate
               </Button>
@@ -249,7 +325,7 @@ const PortfolioSections = () => {
           </Card>
 
           {/* NVIDIA DL Program */}
-          <Card className="rounded-3xl border border-gray-700 bg-neutral-950 z-20">
+          <Card className="rounded-none border border-gray-700 bg-neutral-950 z-20">
             <CardHeader>
               <CardTitle className="text-lg font-semibold">
                 Deep Learning Fundamentals
@@ -262,34 +338,12 @@ const PortfolioSections = () => {
               <Button
                 onClick={() => handleDownload("/nvidia_cert.pdf")}
                 variant="outline"
-                className="rounded-full hover:bg-gray-200 hover:text-black cursor-none"
+                className="rounded-none hover:bg-gray-200 hover:text-black cursor-none"
               >
                 View Certificate
               </Button>
             </CardContent>
           </Card>
-
-          {/* NVIDIA DL Program */}
-          {/* <Card className="rounded-3xl border border-gray-700 bg-neutral-950">
-            <CardHeader>
-              <CardTitle className="text-lg font-semibold">
-                Building RAG agents with LLMS
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="text-gray-300 text-sm flex flex-col gap-3 justify-between h-full">
-              <p>
-               A deep dive into RAG architecture using LLMs and LangChain; By NVIDIA
-              </p>
-              <Button
-                // onClick={() => handleDownload("/nvidia_cert.pdf")}
-                disabled
-                variant="outline"
-                className="rounded-full hover:bg-gray-200 hover:text-black cursor-none"
-              >
-                View Certificate
-              </Button>
-            </CardContent>
-          </Card> */}
         </div>
       </section>
 
@@ -301,65 +355,15 @@ const PortfolioSections = () => {
         </span>
 
         {/* Card Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {Projects.map((project) => (
-            <div
+        <div className="grid grid-cols-1 gap-4 animate-in fade-in slide-in-from-bottom-8 duration-700 ease-out fill-mode-both delay-300">
+          {Projects.map((project, index) => (
+            <ProjectCard
               key={project.name}
-              className="flex flex-col gap-3 border border-gray-900 p-5 bg-gray-900/30 hover:bg-gray-900/60 transition-all rounded-3xl z-20"
-            >
-              {/* Header */}
-              <div className="flex justify-between items-start">
-                <h2 className="text-lg font-bold text-gray-100">
-                  {project.name}
-                </h2>
-                <span
-                  className={`flex w-fit items-center text-xs font-semibold px-2 py-1 rounded-full ${project.done
-                    ? "bg-green-900/50 text-green-400"
-                    : "bg-yellow-900/50 text-yellow-400"
-                    }`}
-                >
-                  {!project.done && <Clock size={12} className="mr-1.5" />}
-                  {project.done ? "Completed" : "In Progress"}
-                </span>
-              </div>
-
-              {/* Description */}
-              <p className="text-sm text-gray-400 flex-1">{project.desc}</p>
-
-              {/* Stack */}
-              <div className="flex flex-wrap gap-2">
-                {project.stack.map((tech) => (
-                  <span
-                    key={tech}
-                    className="bg-gray-700/50 text-gray-300 text-xs font-medium px-2 py-1 rounded-full"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-
-              {/* Links */}
-              <div className="flex gap-4 mt-2 text-sm">
-                {project.github && (
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 text-gray-400 hover:text-cyan-400 transition-colors"
-                  >
-                    <Github size={16} /> GitHub
-                  </a>
-                )}
-                <a
-                  href={project.live}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 text-gray-400 hover:text-cyan-400 transition-colors"
-                >
-                  <ExternalLink size={16} /> Live
-                </a>
-              </div>
-            </div>
+              project={project}
+              index={index}
+              expanded={expandedIndex === index}
+              onToggle={() => handleToggle(index)}
+            />
           ))}
         </div>
       </section>

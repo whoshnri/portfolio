@@ -28,7 +28,7 @@ export const InfiniteMovingCards = ({
 
   useEffect(() => {
     addAnimation();
-  }, []);
+  }, [addAnimation]);
 
   function addAnimation() {
     if (containerRef.current && scrollerRef.current) {
@@ -90,21 +90,21 @@ export const InfiniteMovingCards = ({
           const Icon = item.icon;
           return (
             <li
-              className="relative w-fit rounded-2xl"
+              className="relative w-fit rounded-none"
               key={item.name}
             >
-                <div
-                  aria-hidden="true"
-                  className="user-select-none pointer-events-none absolute -top-0.5 -left-0.5 -z-1 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
-                ></div>
-                <div className="relative z-20 mt-6 flex flex-row items-center gap-3">
-                  {/* Icon */}
-                  <Icon size={28} style={{ color: item.color }} />
-                  {/* Name */}
-                  <span className="text-sm hidden leading-[1.6] font-normal text-neutral-500 dark:text-gray-400">
-                    {item.name}
-                  </span>
-                </div>
+              <div
+                aria-hidden="true"
+                className="user-select-none pointer-events-none absolute -top-0.5 -left-0.5 -z-1 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
+              ></div>
+              <div className="relative z-20 mt-6 flex flex-row items-center gap-3">
+                {/* Icon */}
+                <Icon size={28} style={{ color: item.color }} />
+                {/* Name */}
+                <span className="text-sm hidden leading-[1.6] font-normal text-neutral-500 dark:text-gray-400">
+                  {item.name}
+                </span>
+              </div>
             </li>
           );
         })}
