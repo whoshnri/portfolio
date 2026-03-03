@@ -1,14 +1,19 @@
 import React from "react";
-import { FaLinkedin, FaWhatsapp } from "react-icons/fa";
+import { FaLinkedin, FaWhatsapp, FaGithub } from "react-icons/fa";
 import { BsTwitterX } from "react-icons/bs";
 import { MailIcon } from "lucide-react";
 
-
 const socialLinks = [
+  {
+    name: "Github",
+    icon: <FaGithub className="w-4 h-4" />,
+    url: "https://github.com/whoshnri",
+    color: "hover:text-neutral-400",
+  },
   {
     name: "X",
     icon: <BsTwitterX className="w-4 h-4" />,
-    url: "https://x.com/xyz_07hb",
+    url: "https://x.com/whoshnry",
     color: "hover:text-neutral-400",
   },
   {
@@ -20,13 +25,13 @@ const socialLinks = [
   {
     name: "WhatsApp",
     icon: <FaWhatsapp className="w-4 h-4" />,
-    url: "https://wa.me/yourwhatsappnumber", // Remember to update this later
+    url: "https://wa.me/2347080482034",
     color: "hover:text-green-500",
   },
   {
     name: "Work Email",
     icon: <MailIcon className="w-4 h-4" />,
-    url: "mailto:yourworkemail@example.com", // Remember to update this later
+    url: "mailto:henrybassey2007@gmail.com",
     color: "hover:text-gray-300",
   }
 ];

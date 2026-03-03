@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import About from './components/About';
 import { TbExternalLink } from 'react-icons/tb';
 import { ArrowLeftRightIcon, ArrowLeftSquare, ArrowRight, ArrowRightSquareIcon } from 'lucide-react';
+import Experience from './components/Experience';
 
 export default function Home() {
   return (
@@ -36,13 +37,14 @@ export default function Home() {
         </div>
       </div>
       <About />
+      <Experience />
     </motion.div>
   );
 }
 
 
 
-function SiteNewink({text, href}: {text: string, href: string}) {
+function SiteNewink({ text, href }: { text: string, href: string }) {
   return (
     <Link
       href={href}

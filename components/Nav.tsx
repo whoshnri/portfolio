@@ -1,10 +1,11 @@
 "use client";
 import Link from "next/link";
-import { MailIcon } from "lucide-react";
+import { MailIcon, Menu, X } from "lucide-react";
 import { BsTwitterX } from "react-icons/bs";
 import { FaLinkedin, FaWhatsapp, FaGithub, FaHome } from "react-icons/fa";
 import { SendMessagePopup } from "@/app/Pager";
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const socialLinks = [
     {
@@ -47,13 +48,14 @@ const socialLinks = [
 
 export default function Nav() {
     const [isPopupOpen, setIsPopupOpen] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     return (
         <>
             {/* Desktop Nav */}
             <div className="lg:flex relative gap-2 mx-auto hidden items-start z-50 px-4">
                 <nav className="w-[100px] flex flex-col items-center sticky top-[5vh] pb-10 justify-between h-[90vh] z-100 animate-in fade-in slide-in-from-left-8 duration-700 ease-out fill-mode-both">
-                    <h1 className="text-lg font-semibold font-sans tracking-wide">
+                    <h1 className="text-lg font-playfair tracking-wide text-white">
                         HB<span className="text-blue-400">.</span>
                     </h1>
                     {/* Social Links */}
@@ -65,7 +67,7 @@ export default function Nav() {
                                     href={link.url}
                                     target={link.name === "Home" ? "_self" : "_blank"}
                                     rel="noopener noreferrer"
-                                    className={`flex flex-col border rounded-none p-1 items-center gap-1 text-gray-400 transition-all transform hover:scale-110 ${link.color}`}
+                                    className={`flex flex-col border rounded-none p-1 items-center gap-1 text-gray-400 transition-all transform hover:scale-110 border-transparent hover:border-gray-800 ${link.color}`}
                                 >
                                     {link.icon}
                                 </a>
@@ -76,18 +78,51 @@ export default function Nav() {
             </div>
 
             {/* Mobile Nav */}
-            <div className="w-full lg:hidden px-4">
-                <nav className="fixed left-0 right-0 top-0 px-6 py-4 z-10 backdrop-blur-3xl flex items-center justify-between z-50 animate-in fade-in slide-in-from-top-4 duration-500 ease-out fill-mode-both border-b border-gray-900">
-                    <Link href="/" className="text-lg font-semibold text-white select-none leading-none font-playfair tracking-wide">
-                        Henry Bassey<span className="text-blue-400">.</span>
+            <div className="w-full lg:hidden">
+                <nav className="fixed left-0 right-0 top-0 px-6 py-4 z-50 backdrop-blur-3xl bg-black/80 flex items-center justify-between animate-in fade-in slide-in-from-top-4 duration-500 ease-out fill-mode-both border-b border-gray-900">
+                    <Link href="/" className="text-lg text-white select-none leading-none font-playfair tracking-wide" onClick={() => setIsMobileMenuOpen(false)}>
+                        HB<span className="text-blue-400">.</span>
                     </Link>
 
-                    <div className="flex items-center gap-4 text-xs font-dmsans">
-                        <Link href="/about" className="text-gray-400 hover:text-white">About</Link>
-                        <Link href="/blog" className="text-gray-400 hover:text-white">Blog</Link>
-                        <Link href="/videos" className="text-gray-400 hover:text-white">Videos</Link>
-                    </div>
+                    <button
+                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                        className="text-gray-400 hover:text-white transition-colors focus:outline-none"
+                    >
+                        {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                    </button>
                 </nav>
+
+                <AnimatePresence>
+                    {isMobileMenuOpen && (
+                        <motion.div
+                            initial={{ opacity: 0, y: -20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -20 }}
+                            transition={{ duration: 0.2 }}
+                            className="fixed inset-0 z-40 bg-black pt-24 px-6 flex flex-col"
+                        >
+                            <div className="flex flex-col gap-8 text-2xl font-playfair tracking-tight">
+                                <Link onClick={() => setIsMobileMenuOpen(false)} href="/blog" className="text-gray-400 hover:text-white transition-colors">Blog</Link>
+                                <Link onClick={() => setIsMobileMenuOpen(false)} href="/videos" className="text-gray-400 hover:text-white transition-colors">Videos</Link>
+                            </div>
+
+                            <div className="mt-auto mx-auto mb-10 flex flex-wrap gap-6">
+                                {socialLinks.map((link) => (
+                                    <a
+                                        key={link.name}
+                                        href={link.url}
+                                        target={link.name === "Home" ? "_self" : "_blank"}
+                                        rel="noopener noreferrer"
+                                        className={`text-gray-400 transition-transform transform hover:scale-110 ${link.color}`}
+                                        onClick={() => setIsMobileMenuOpen(false)}
+                                    >
+                                        {link.icon}
+                                    </a>
+                                ))}
+                            </div>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
             </div>
 
             <SendMessagePopup isOpen={isPopupOpen} setIsOpen={setIsPopupOpen} />
