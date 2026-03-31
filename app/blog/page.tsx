@@ -4,9 +4,6 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import blogs from "@/lib/blogs.json";
 
-// export const metadata = {
-//     title: "Blog",
-// };
 
 export default function BlogList() {
     return (

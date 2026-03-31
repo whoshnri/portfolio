@@ -3,10 +3,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-// export const metadata = {
-//     title: "Videos",
-// };
-
 const placeholderVideos = [
     {
         id: "1",

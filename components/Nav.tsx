@@ -55,9 +55,9 @@ export default function Nav() {
             {/* Desktop Nav */}
             <div className="lg:flex relative gap-2 mx-auto hidden items-start z-50 px-4">
                 <nav className="w-[100px] flex flex-col items-center sticky top-[5vh] pb-10 justify-between h-[90vh] z-100 animate-in fade-in slide-in-from-left-8 duration-700 ease-out fill-mode-both">
-                    <h1 className="text-lg font-playfair tracking-wide text-white">
+                    <span className="text-lg font-playfair tracking-wide text-white">
                         HB<span className="text-blue-400">.</span>
-                    </h1>
+                    </span>
                     {/* Social Links */}
                     <div className="flex justify-evenly ">
                         <nav className="flex flex-col items-center justify-center gap-5 flex-wrap">

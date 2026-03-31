@@ -17,8 +17,26 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     if (!blog) {
         return { title: "Blog Not Found" };
     }
+
+    const firstBlockText = blog.blocks[0].replace(/<[^>]+>/g, '');
+    const description = firstBlockText.split(' ').slice(0, 25).join(' ') + '...';
+
     return {
         title: blog.heading,
+        description: description,
+        keywords: blog.heading.split(' ').map(w => w.toLowerCase()).filter(w => w.length > 3),
+        openGraph: {
+            title: blog.heading,
+            description: description,
+            type: "article",
+            publishedTime: blog.date,
+            authors: ["Henry Bassey"],
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: blog.heading,
+            description: description,
+        },
     };
 }
 

@@ -21,9 +21,9 @@ export default function Hero() {
 
           {/* Text Content */}
           <div className="space-y-6 col-span-2 text-left mt-8">
-            <h1 className="text-4xl lg:text-5xl font-extralight text-white tracking-tight font-sans">
+            <h2 className="text-4xl lg:text-5xl font-extralight text-white tracking-tight font-sans">
               Software Engineer <span className="text-blue-400">.</span>
-            </h1>
+            </h2>
             <p className="text-gray-300 text-base lg:text-lg max-w-lg leading-relaxed">
               Dedicated to building polished, high-performance web applications with a focus on
               <span className="italic text-blue-400 font-medium"> ultraminimalistic design </span>

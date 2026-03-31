@@ -3,6 +3,27 @@ import { ArrowRight } from "lucide-react";
 
 const workExperience = [
     {
+        slug : "pricewaterhouse-coopers",
+        role: "Intern",
+        client: "PwC",
+        type: "Human Capital",
+        description: "",
+        contributions : [],
+        stack : ["Microsoft excel", "Microsoft word"],
+        startDate: "March 2026",
+        endDate: "Present",
+        status : "Ongoing",
+        sole: false,
+        links: {
+            live: "https://www.pwc.com/ng/en.html"
+        },
+        ongoingInvolvements: [
+            "Supporting the Talent Acquisition team with candidate screening and interview coordination.",
+            "Assisting in the upkeep of HR records and employee data.",
+            "Contributing to the execution of internal operations."
+        ]
+    },
+    {
         slug: "suprvillain-store",
         role: "Freelance Developer",
         client: "Suprvillain Store",
@@ -87,7 +108,7 @@ const workExperience = [
 
 export default function Experience() {
     return (
-        <div className="pt-20 pb-32">
+        <section className="pt-20 pb-32">
             <motion.div
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -116,7 +137,23 @@ export default function Experience() {
                                 {job.description}
                             </p>
 
-                            <ul className="list-disc list-inside text-gray-400 font-light leading-relaxed space-y-1 mb-2">
+                            {job.ongoingInvolvements && job.ongoingInvolvements.length > 0 && (
+                                <div className="mt-4">
+                                    <h4 className="text-xs uppercase tracking-widest text-blue-400 mb-4 flex items-center gap-2">
+                                        <span className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-pulse" />
+                                        Current Involvements
+                                    </h4>
+                                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        {job.ongoingInvolvements.map((involvement, idx) => (
+                                            <li key={idx} className="p-4 border border-[#d4d3ce]/10 bg-white/5 text-sm text-gray-300 font-light leading-relaxed">
+                                                {involvement}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
+
+                            <ul className="mt-4 list-disc list-inside text-gray-400 font-light leading-relaxed space-y-1 mb-2">
                                 {job.contributions.map((contribution, idx) => (
                                     <li key={idx}>{contribution}</li>
                                 ))}
@@ -127,6 +164,6 @@ export default function Experience() {
                     ))}
                 </div>
             </motion.div>
-        </div>
+        </section>
     );
 }

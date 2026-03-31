@@ -7,14 +7,14 @@ export default function About() {
   const [isExpanded, setIsExpanded] = useState(false)
 
   return (
-    <div className="pt-32 pb-20">
+    <section className="pt-32 pb-20">
       <motion.div
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="w-full font-dmsans font-light leading-[1.8] text-[#d4d3ce]"
       >
-        <h1 className="text-4xl md:text-5xl font-playfair text-white mb-12 tracking-tight">About Me</h1>
+        <h2 className="text-4xl md:text-5xl font-playfair text-white mb-12 tracking-tight">About Me</h2>
 
         <div className="space-y-8">
           <p>
@@ -42,7 +42,7 @@ export default function About() {
                   Beyond the code, I am pursuing a degree in Computer Science at Yaba College of Technology, Lagos. My formal education is supplemented by hands-on SIWES training at the Yabatech Digital Technology Academy with an emphasis on AI and Machine Learning, alongside an NVIDIA Deep Learning Fundamentals certificate.
                 </p>
 
-                <p>Currently I am serving my 1-year Industrial Attachment at <a href="#" className="underline underline-offset-4 hover:text-white transition-colors">XXXXXXX</a>, hoping to gain useful experience in XXXXXXXXXXXX and further upgrade my skillset and network.</p>
+                <p>Currently I am serving my 1-year Industrial Attachment at <a href="https://www.pwc.com/ng/en.html" className="underline underline-offset-4 text-lg hover:text-white transition-colors">PwC</a>, hoping to gain useful experience in <span className="font-bold">Human Capital and challenging, dynmamic environments</span> and further upgrade my skillset and network.</p>
 
                 <p>
                   I operate on the fundamental belief that well-made software can be a great equalizer and create real opportunities, particularly here in Africa. That ambition translates directly into the products I build—they aren't just demos; they are tools that people actually use.
@@ -53,7 +53,7 @@ export default function About() {
                 </p>
 
                 <p className="pt-3">
-                  Most of my energy right now goes into Quill Labs. If you&apos;re curious about what we&apos;re building, <a href="https://quilllabs.com" target="_blank" rel="noopener noreferrer" className="text-white border-b border-gray-600 hover:border-white pb-[2px] transition-colors">visit us here</a>.
+                  Most of my developer energy right now goes into Quill Labs. If you&apos;re curious about what we&apos;re building, <a href="https://qlabs.space" target="_blank" rel="noopener noreferrer" className="text-white border-b border-gray-600 hover:border-white pb-[2px] transition-colors">visit us here</a>.
                 </p>
               </motion.div>
             )}
@@ -73,6 +73,6 @@ export default function About() {
           </button>
         </div>
       </motion.div>
-    </div>
+    </section>
   )
 }
