@@ -30,6 +30,7 @@ export default function SpotifyNowPlaying() {
 
   useEffect(() => {
     let isMounted = true;
+    let interval: ReturnType<typeof setInterval> | null = null;
 
     const fetchNowPlaying = async () => {
       if (document.visibilityState === "hidden") {
@@ -57,19 +58,35 @@ export default function SpotifyNowPlaying() {
       }
     };
 
+    const startPolling = () => {
+      if (interval) return;
+      interval = setInterval(fetchNowPlaying, 20000);
+    };
+
+    const stopPolling = () => {
+      if (!interval) return;
+      clearInterval(interval);
+      interval = null;
+    };
+
     const onVisibilityChange = () => {
       if (document.visibilityState === "visible") {
         fetchNowPlaying();
+        startPolling();
+      } else {
+        stopPolling();
       }
     };
 
     fetchNowPlaying();
-    const interval = setInterval(fetchNowPlaying, 20000);
+    if (document.visibilityState === "visible") {
+      startPolling();
+    }
     document.addEventListener("visibilitychange", onVisibilityChange);
 
     return () => {
       isMounted = false;
-      clearInterval(interval);
+      stopPolling();
       document.removeEventListener("visibilitychange", onVisibilityChange);
     };
   }, []);

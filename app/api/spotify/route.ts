@@ -90,7 +90,8 @@ export async function GET() {
         songUrl: item.external_urls?.spotify ?? "",
       },
     });
-  } catch {
+  } catch (error) {
+    console.error("Spotify API route failed:", error);
     return NextResponse.json(
       { isPlaying: false, error: "Unable to fetch Spotify status right now." },
       { status: 500 }
