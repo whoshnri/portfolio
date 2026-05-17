@@ -81,11 +81,13 @@ export async function GET() {
       return NextResponse.json({ isPlaying: false });
     }
 
+    const artists = item.artists?.map((artist) => artist.name).join(", ");
+
     return NextResponse.json({
       isPlaying: Boolean(song?.is_playing),
       track: {
         name: item.name,
-        artists: item.artists?.map((artist) => artist.name).join(", ") ?? "Unknown artist",
+        artists: artists || "Unknown artist",
         albumArt: item.album?.images?.[0]?.url ?? "",
         songUrl: item.external_urls?.spotify ?? "",
       },
