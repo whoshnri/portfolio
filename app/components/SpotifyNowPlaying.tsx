@@ -23,6 +23,10 @@ export default function SpotifyNowPlaying() {
     let isMounted = true;
 
     const fetchNowPlaying = async () => {
+      if (document.visibilityState === "hidden") {
+        return;
+      }
+
       try {
         const response = await fetch("/api/spotify");
         const json = (await response.json()) as SpotifyResponse;
@@ -40,12 +44,20 @@ export default function SpotifyNowPlaying() {
       }
     };
 
+    const onVisibilityChange = () => {
+      if (document.visibilityState === "visible") {
+        fetchNowPlaying();
+      }
+    };
+
     fetchNowPlaying();
     const interval = setInterval(fetchNowPlaying, 20000);
+    document.addEventListener("visibilitychange", onVisibilityChange);
 
     return () => {
       isMounted = false;
       clearInterval(interval);
+      document.removeEventListener("visibilitychange", onVisibilityChange);
     };
   }, []);
 
