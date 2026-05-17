@@ -5,6 +5,7 @@ import About from './components/About';
 import { TbExternalLink } from 'react-icons/tb';
 import { ArrowLeftRightIcon, ArrowLeftSquare, ArrowRight, ArrowRightSquareIcon } from 'lucide-react';
 import Experience from './components/Experience';
+import SpotifyNowPlaying from './components/SpotifyNowPlaying';
 
 export default function Home() {
   return (
@@ -34,6 +35,7 @@ export default function Home() {
         <div className="flex gap-6 font-dmsans text-sm uppercase tracking-widest text-[#d4d3ce]">
           <SiteNewink text="Read the Blog" href="https://blogs.henrybassey.me" />
         </div>
+        <SpotifyNowPlaying />
       </div>
       <About />
       <Experience />
