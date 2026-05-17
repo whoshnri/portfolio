@@ -42,6 +42,10 @@ async function getSpotifyAccessToken() {
   }
 
   const json = await response.json();
+  if (!json?.access_token) {
+    throw new Error("Spotify access token is missing in refresh response.");
+  }
+
   return json.access_token as string;
 }
 

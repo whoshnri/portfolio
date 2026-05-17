@@ -64,7 +64,7 @@ export default function SpotifyNowPlaying() {
   return (
     <section className="mt-10 border border-[#d4d3ce]/20 bg-white/5 p-4 md:p-5 max-w-lg">
       <div className="flex items-center gap-2 text-xs uppercase tracking-widest text-gray-400 mb-4">
-        <FaSpotify className="text-[#1DB954]" aria-hidden />
+        <FaSpotify className="text-[#1DB954]" aria-hidden="true" />
         <span>Currently Playing</span>
       </div>
 
