@@ -38,7 +38,10 @@ async function getSpotifyAccessToken() {
   });
 
   if (!response.ok) {
-    throw new Error("Failed to refresh Spotify access token.");
+    const errorDetails = await response.text();
+    throw new Error(
+      `Failed to refresh Spotify access token. Status: ${response.status}. ${errorDetails}`
+    );
   }
 
   const json = await response.json();
@@ -64,6 +67,10 @@ export async function GET() {
     }
 
     if (!response.ok) {
+      const errorDetails = await response.text();
+      console.error(
+        `Spotify currently-playing request failed. Status: ${response.status}. ${errorDetails}`
+      );
       return NextResponse.json({ isPlaying: false });
     }
 

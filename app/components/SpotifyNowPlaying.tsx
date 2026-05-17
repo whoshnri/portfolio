@@ -15,6 +15,15 @@ type SpotifyResponse = {
   };
 };
 
+function isTrustedSpotifyImage(url: string) {
+  try {
+    const parsed = new URL(url);
+    return parsed.protocol === "https:" && parsed.hostname === "i.scdn.co";
+  } catch {
+    return false;
+  }
+}
+
 export default function SpotifyNowPlaying() {
   const [data, setData] = useState<SpotifyResponse>({ isPlaying: false });
   const [isLoading, setIsLoading] = useState(true);
@@ -29,6 +38,10 @@ export default function SpotifyNowPlaying() {
 
       try {
         const response = await fetch("/api/spotify");
+        if (!response.ok) {
+          throw new Error("Failed to load Spotify status.");
+        }
+
         const json = (await response.json()) as SpotifyResponse;
         if (isMounted) {
           setData(json);
@@ -72,7 +85,7 @@ export default function SpotifyNowPlaying() {
         <p className="text-sm text-[#d4d3ce]">Checking Spotify...</p>
       ) : data.isPlaying && data.track ? (
         <div className="flex items-center gap-4">
-          {data.track.albumArt ? (
+          {data.track.albumArt && isTrustedSpotifyImage(data.track.albumArt) ? (
             <Image
               src={data.track.albumArt}
               alt={`${data.track.name} album art`}
