@@ -15,25 +15,13 @@ const socialLinks = [
   {
     name: "X",
     icon: <BsTwitterX className="w-4 h-4" />,
-    url: "https://x.com/xyz_07hb",
+    url: "https://x.com/whoshnri",
     color: "hover:text-neutral-400",
   },
   {
-    name: "LinkedIn",
-    icon: <FaLinkedin className="w-4 h-4" />,
-    url: "https://linkedin.com/in/henrybassey",
-    color: "hover:text-blue-500",
-  },
-  {
-    name: "WhatsApp",
-    icon: <FaWhatsapp className="w-4 h-4" />,
-    url: "https://wa.me/yourwhatsappnumber", // Remember to update this later
-    color: "hover:text-green-500",
-  },
-  {
-    name: "Work Email",
+    name: "Email",
     icon: <MailIcon className="w-4 h-4" />,
-    url: "mailto:yourworkemail@example.com", // Remember to update this later
+    url: "mailto: henrybassey2007@gmail.com", // Remember to update this later
     color: "hover:text-gray-300",
   }
 ];
