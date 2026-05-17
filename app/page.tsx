@@ -32,8 +32,7 @@ export default function Home() {
         </p>
 
         <div className="flex gap-6 font-dmsans text-sm uppercase tracking-widest text-[#d4d3ce]">
-          <SiteNewink text="Read the Blog" href="/blog" />
-          <SiteNewink text="Watch Videos" href="/videos" />
+          <SiteNewink text="Read the Blog" href="https://blogs.henrybassey.me" />
         </div>
       </div>
       <About />
