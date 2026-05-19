@@ -2,6 +2,7 @@ import React from "react";
 import { FaLinkedin, FaWhatsapp, FaGithub } from "react-icons/fa";
 import { BsTwitterX } from "react-icons/bs";
 import { MailIcon } from "lucide-react";
+import { InlineCode } from "@/components/InlineCode";
 
 const socialLinks = [
   {
@@ -57,7 +58,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <p className="text-sm text-gray-500 font-dmsans">
-          &copy; 2025 henrybassey.me
+          &copy; 2025 <InlineCode className="text-gray-400">henrybassey.me</InlineCode>
         </p>
       </div>
     </footer>

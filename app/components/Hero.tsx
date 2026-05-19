@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import image from "@/public/image.jpg";
 import { Download } from "lucide-react";
+import { InlineCode } from "@/components/InlineCode";
 
 export default function Hero() {
   return (
@@ -22,11 +23,11 @@ export default function Hero() {
           {/* Text Content */}
           <div className="space-y-6 col-span-2 text-left mt-8">
             <h2 className="text-4xl lg:text-5xl font-extralight text-white tracking-tight font-sans">
-              Software Engineer <span className="text-blue-400">.</span>
+              <InlineCode>Software Engineer</InlineCode> <span className="text-blue-400">.</span>
             </h2>
             <p className="text-gray-300 text-base lg:text-lg max-w-lg leading-relaxed">
               Dedicated to building polished, high-performance web applications with a focus on
-              <span className="italic text-blue-400 font-medium"> ultraminimalistic design </span>
+              <InlineCode className="text-blue-200">ultraminimalistic design</InlineCode>
               and seamless user experiences.
             </p>
 
@@ -35,7 +36,7 @@ export default function Hero() {
               download
               className="inline-flex items-center gap-3 btn-border-reveal px-8 py-4 rounded-full text-sm font-medium transition cursor-none mt-4 hover:scale-105"
             >
-              Download Resume
+              <InlineCode>Download Resume</InlineCode>
               <Download className="w-5 h-5" />
             </a>
           </div>

@@ -1,11 +1,12 @@
 "use client";
 import Link from "next/link";
 import { MailIcon, Menu, X } from "lucide-react";
-import { BsTwitterX } from "react-icons/bs";
+import { BsInstagram, BsTwitterX } from "react-icons/bs";
 import { FaLinkedin, FaWhatsapp, FaGithub, FaHome } from "react-icons/fa";
 import { SendMessagePopup } from "@/app/Pager";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { InlineCode } from "@/components/InlineCode";
 
 const socialLinks = [
     {
@@ -23,19 +24,19 @@ const socialLinks = [
     {
         name: "X",
         icon: <BsTwitterX className="w-6 h-6" />,
-        url: "https://x.com/whoshnry",
+        url: "https://x.com/whoshnri",
         color: "hover:text-neutral-400",
     },
     {
-        name: "LinkedIn",
-        icon: <FaLinkedin className="w-6 h-6" />,
-        url: "https://linkedin.com/in/henrybassey",
-        color: "hover:text-blue-500",
+        name: "Instagram",
+        icon: <BsInstagram className="w-6 h-6" />,
+        url: "https://instagram.com/sfw_henry",
+        color: "hover:text-neutral-400",
     },
     {
         name: "WhatsApp",
         icon: <FaWhatsapp className="w-6 h-6" />,
-        url: "https://wa.me/2347080482034",
+        url: "https://wa.me/2349153278723",
         color: "hover:text-green-500",
     },
     {
@@ -103,7 +104,7 @@ export default function Nav() {
                         >
                             <div className="flex flex-col gap-8 text-2xl font-playfair tracking-tight">
                                 <Link onClick={() => setIsMobileMenuOpen(false)} href="/blog" className="text-gray-400 hover:text-white transition-colors">Blog</Link>
-                                <Link onClick={() => setIsMobileMenuOpen(false)} href="/videos" className="text-gray-400 hover:text-white transition-colors">Videos</Link>
+                                
                             </div>
 
                             <div className="mt-auto mx-auto mb-10 flex flex-wrap gap-6">

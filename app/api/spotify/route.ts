@@ -3,6 +3,31 @@ import { NextResponse } from "next/server";
 const NOW_PLAYING_ENDPOINT = "https://api.spotify.com/v1/me/player/currently-playing";
 const TOKEN_ENDPOINT = "https://accounts.spotify.com/api/token";
 
+class SpotifyTokenError extends Error {
+  constructor(
+    message: string,
+    readonly status?: number,
+    readonly details?: string
+  ) {
+    super(message);
+    this.name = "SpotifyTokenError";
+  }
+}
+
+function isNetworkError(error: unknown) {
+  if (!(error instanceof TypeError)) {
+    return false;
+  }
+
+  const cause = (error as { cause?: unknown }).cause;
+  if (!cause || typeof cause !== "object") {
+    return false;
+  }
+
+  const code = (cause as { code?: unknown }).code;
+  return code === "ETIMEDOUT" || code === "EAI_AGAIN" || code === "ECONNRESET";
+}
+
 type SpotifyTrack = {
   name: string;
   external_urls?: { spotify?: string };
@@ -18,7 +43,7 @@ async function getSpotifyAccessToken() {
   const refreshToken = process.env.SPOTIFY_REFRESH_TOKEN;
 
   if (!clientId || !clientSecret || !refreshToken) {
-    throw new Error("Missing Spotify environment variables.");
+    throw new SpotifyTokenError("Missing Spotify environment variables.");
   }
 
   const basic = Buffer.from(`${clientId}:${clientSecret}`).toString("base64");
@@ -39,14 +64,16 @@ async function getSpotifyAccessToken() {
 
   if (!response.ok) {
     const errorDetails = await response.text();
-    throw new Error(
-      `Failed to refresh Spotify access token. Status: ${response.status}. ${errorDetails}`
+    throw new SpotifyTokenError(
+      "Failed to refresh Spotify access token.",
+      response.status,
+      errorDetails
     );
   }
 
   const json = await response.json();
   if (!json?.access_token) {
-    throw new Error("Spotify access token is missing in refresh response.");
+    throw new SpotifyTokenError("Spotify access token is missing in refresh response.");
   }
 
   return json.access_token as string;
@@ -93,6 +120,21 @@ export async function GET() {
       },
     });
   } catch (error) {
+    if (error instanceof SpotifyTokenError) {
+      console.error("Spotify token refresh failed:", {
+        message: error.message,
+        status: error.status,
+        details: error.details,
+      });
+
+      return NextResponse.json({ isPlaying: false });
+    }
+
+    if (isNetworkError(error)) {
+      console.error("Spotify request failed due to a network error:", error);
+      return NextResponse.json({ isPlaying: false });
+    }
+
     console.error("Spotify API route failed:", error);
     return NextResponse.json(
       { isPlaying: false, error: "Unable to fetch Spotify status right now." },

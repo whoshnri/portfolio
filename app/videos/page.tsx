@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import { InlineCode } from "@/components/InlineCode";
 
 const placeholderVideos = [
     {
@@ -47,7 +48,7 @@ export default function VideosPage() {
 
                             <div>
                                 <h2 className="text-2xl font-playfair text-white mb-3 tracking-tight">
-                                    {video.title}
+                                    <InlineCode>{video.title}</InlineCode>
                                 </h2>
                                 <p className="font-dmsans text-gray-400 font-light leading-relaxed max-w-2xl">
                                     {video.description}

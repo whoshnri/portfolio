@@ -21,6 +21,7 @@ import {
 import { TbBrandReactNative } from "react-icons/tb";
 import { Clock, ExternalLink, Github as LucideGithub } from "lucide-react";
 import { InfiniteMovingCards } from "@/components/infinite-moving-cards";
+import { InlineCode } from "@/components/InlineCode";
 
 const skills = [
   { name: "Python", icon: FaPython, color: "#3776AB" },
@@ -192,7 +193,9 @@ const ProjectCard = ({ project, index, expanded, onToggle }: { project: Projj; i
               : "bg-yellow-900/30 text-yellow-500"
               }`}
           >
-            {project.done ? "Done" : "WIP"}
+            <InlineCode className={project.done ? "text-green-300" : "text-yellow-300"}>
+              {project.done ? "Done" : "WIP"}
+            </InlineCode>
           </span>
         </div>
         <button
@@ -211,12 +214,12 @@ const ProjectCard = ({ project, index, expanded, onToggle }: { project: Projj; i
 
         <div className="flex flex-wrap gap-2">
           {project.stack.map((tech) => (
-            <span
+            <InlineCode
               key={tech}
-              className="text-gray-500 text-xs font-mono border border-gray-800 px-2 py-1 rounded-none"
+              className="text-xs text-gray-400"
             >
               {tech}
-            </span>
+            </InlineCode>
           ))}
         </div>
 
@@ -228,7 +231,7 @@ const ProjectCard = ({ project, index, expanded, onToggle }: { project: Projj; i
               rel="noopener noreferrer"
               className="flex items-center gap-1.5 text-gray-500 hover:text-white transition-colors"
             >
-              <LucideGithub size={14} /> source
+              <LucideGithub size={14} /> <InlineCode>source</InlineCode>
             </a>
           )}
           <a
@@ -237,7 +240,7 @@ const ProjectCard = ({ project, index, expanded, onToggle }: { project: Projj; i
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 text-gray-500 hover:text-white transition-colors"
           >
-            <ExternalLink size={14} /> live
+            <ExternalLink size={14} /> <InlineCode>live</InlineCode>
           </a>
         </div>
       </div>
@@ -275,7 +278,7 @@ const PortfolioSections = () => {
         <span className="flex items-center gap-3 py-5">
 
           <span className="shrink-0 text-3xl font-mono text-white">
-            Education
+            <InlineCode className="text-3xl">Education</InlineCode>
           </span>
         </span>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -283,7 +286,7 @@ const PortfolioSections = () => {
           <Card className="rounded-none border border-gray-700 bg-neutral-950 z-20">
             <CardHeader>
               <CardTitle className="text-lg font-semibold">
-                Yabatech Digital Technology Academy
+                <InlineCode>Yabatech Digital Technology Academy</InlineCode>
               </CardTitle>
             </CardHeader>
             <CardContent className="text-gray-300 text-sm flex flex-col gap-3 justify-between h-full">
@@ -297,7 +300,7 @@ const PortfolioSections = () => {
                 variant="outline"
                 className="rounded-none hover:bg-gray-200 hover:text-black"
               >
-                View Certificate
+                <InlineCode>View Certificate</InlineCode>
               </Button>
             </CardContent>
           </Card>
@@ -306,7 +309,7 @@ const PortfolioSections = () => {
           <Card className="rounded-none border border-gray-700 bg-neutral-950 z-20">
             <CardHeader>
               <CardTitle className="text-lg font-semibold">
-                Yaba College of Technology (YCT)
+                <InlineCode>Yaba College of Technology (YCT)</InlineCode>
               </CardTitle>
             </CardHeader>
             <CardContent className="text-gray-300 text-sm flex flex-col gap-3 justify-between h-full">
@@ -319,7 +322,7 @@ const PortfolioSections = () => {
                 variant="outline"
                 className="rounded-none hover:bg-gray-200 hover:text-black"
               >
-                View Certificate
+                <InlineCode>View Certificate</InlineCode>
               </Button>
             </CardContent>
           </Card>
@@ -328,7 +331,7 @@ const PortfolioSections = () => {
           <Card className="rounded-none border border-gray-700 bg-neutral-950 z-20">
             <CardHeader>
               <CardTitle className="text-lg font-semibold">
-                Deep Learning Fundamentals
+                <InlineCode>Deep Learning Fundamentals</InlineCode>
               </CardTitle>
             </CardHeader>
             <CardContent className="text-gray-300 text-sm flex flex-col gap-3 justify-between h-full">
@@ -340,7 +343,7 @@ const PortfolioSections = () => {
                 variant="outline"
                 className="rounded-none hover:bg-gray-200 hover:text-black cursor-none"
               >
-                View Certificate
+                <InlineCode>View Certificate</InlineCode>
               </Button>
             </CardContent>
           </Card>
@@ -351,7 +354,7 @@ const PortfolioSections = () => {
       <section className=" py-6 max-w-4xl mx-auto">
         <span className="flex p-5 gap-2 w-full items-center font-mono">
 
-          <span className="shrink-0 w-fit text-3xl text-white">Projects</span>
+          <span className="shrink-0 w-fit text-3xl text-white"><InlineCode className="text-3xl">Projects</InlineCode></span>
         </span>
 
         {/* Card Grid */}

@@ -6,6 +6,7 @@ import { TbExternalLink } from 'react-icons/tb';
 import { ArrowLeftRightIcon, ArrowLeftSquare, ArrowRight, ArrowRightSquareIcon } from 'lucide-react';
 import Experience from './components/Experience';
 import SpotifyNowPlaying from './components/SpotifyNowPlaying';
+import { InlineCode } from '@/components/InlineCode';
 
 export default function Home() {
   return (
@@ -29,11 +30,11 @@ export default function Home() {
         </a>
 
         <p className="text-lg md:text-xl font-dmsans text-[#d4d3ce] font-light leading-[1.75] mb-12 max-w-lg">
-          Building software from Lagos. Writing about it on the internet.
+          Building software from <InlineCode>Lagos</InlineCode>. Writing about it (and anything else) on the internet.
         </p>
 
-        <div className="flex gap-6 font-dmsans text-sm uppercase tracking-widest text-[#d4d3ce]">
-          <SiteNewink text="Read the Blog" href="https://blogs.henrybassey.me" />
+        <div className="flex gap-6 font-dmsans tracking-widest text-sm uppercase text-[#d4d3ce]">
+          <SiteNewink text="I write, sometimes " href="https://blogs.henrybassey.me" />
         </div>
         <SpotifyNowPlaying />
       </div>
@@ -51,7 +52,7 @@ function SiteNewink({ text, href }: { text: string, href: string }) {
       href={href}
       className="w-fit overflow-hidden  flex items-center group gap-2 border border-[#d4d3ce]/30 hover:border-[#d4d3ce] p-2 transition-colors"
     >
-      {text}
+     {text}
       <ArrowRight className='stroke-1 border -translate-x-100 w-0 h-0 group-hover:w-5 group-hover:h-5 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 ease-in-out duration-300' />
     </Link>
   )

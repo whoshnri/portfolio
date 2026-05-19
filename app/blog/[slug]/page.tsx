@@ -4,6 +4,7 @@ import blogs from "@/lib/blogs.json";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import { InlineCode } from "@/components/InlineCode";
 
 export async function generateStaticParams() {
     return blogs.map((blog) => ({
@@ -56,14 +57,14 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                 // transition={{ duration: 0.8, ease: "easeOut" }}
                 className="max-w-2xl flex flex-col space-y-10 mx-auto w-full"
             >
-                <Link href="/blog" className="text-gray-400 flex items-center-safe gap-4 border w-fit px-5 py-1 hover:text-white"><ArrowLeft className="w-6 h-6" /> Back</Link>
+                <Link href="/blog" className="text-gray-400 flex items-center-safe gap-4 border w-fit px-5 py-1 hover:text-white"><ArrowLeft className="w-6 h-6" /> <InlineCode>Back</InlineCode></Link>
 
                 <div className="">
 
                     <h1 className="text-4xl md:text-5xl font-playfair text-white  tracking-tight leading-tight">
                         {blog.heading}
                     </h1>
-                    <span className="text-sm mt-4 font-dmsans text-gray-500 uppercase tracking-widest">{blog.date}</span>
+                    <span className="text-sm mt-4 font-dmsans text-gray-500 uppercase tracking-widest"><InlineCode className="text-gray-400">{blog.date}</InlineCode></span>
                 </div>
 
                 <div className="flex flex-col gap-8">

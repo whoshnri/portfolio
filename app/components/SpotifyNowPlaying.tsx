@@ -1,9 +1,10 @@
 "use client";
 
-import Image from "next/image";
+import { PlayIcon } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { FaSpotify } from "react-icons/fa";
+import { FaSpinner, FaSpotify } from "react-icons/fa";
+import { InlineCode } from "@/components/InlineCode";
 
 type SpotifyResponse = {
   isPlaying: boolean;
@@ -93,26 +94,28 @@ export default function SpotifyNowPlaying() {
 
   return (
     <section className="mt-10 border border-[#d4d3ce]/20 bg-white/5 p-4 md:p-5 max-w-lg">
-      <div className="flex items-center gap-2 text-xs uppercase tracking-widest text-gray-400 mb-4">
+      <div className="flex items-center gap-2 text-xs uppercase tracking- font-bold text-gray-400 mb-4">
         <FaSpotify className="text-[#1DB954]" aria-hidden="true" />
-        <span>Currently Playing</span>
+       Currently Playing
       </div>
 
       {isLoading ? (
-        <p className="text-sm text-[#d4d3ce]">Checking Spotify...</p>
+        <p className="text-sm text-[#d4d3ce]">
+          <FaSpinner className="animate-spin"/> </p>
       ) : data.isPlaying && data.track ? (
         <div className="flex items-center gap-4">
           {data.track.albumArt && isTrustedSpotifyImage(data.track.albumArt) ? (
-            <Image
+            <img
               src={data.track.albumArt}
               alt={`${data.track.name} album art`}
               width={64}
               height={64}
-              className="w-16 h-16 object-cover"
+              className="w-16 h-16 object-cover rounded-full animate-spin duration-900 [animation-duration:3s]"
             />
           ) : null}
           <div className="flex-1 min-w-0">
-            <p className="text-white text-base font-medium truncate">{data.track.name}</p>
+            <p className="text-white text-base font-medium truncate">
+              {data.track.name}</p>
             <p className="text-[#d4d3ce] text-sm truncate">{data.track.artists}</p>
           </div>
           {data.track.songUrl ? (
@@ -122,12 +125,13 @@ export default function SpotifyNowPlaying() {
               rel="noopener noreferrer"
               className="text-xs uppercase tracking-widest text-[#1DB954] hover:text-white transition-colors"
             >
-              Listen
+              <PlayIcon/>
             </Link>
           ) : null}
         </div>
       ) : (
-        <p className="text-sm text-[#d4d3ce]">Nothing playing right now.</p>
+        <p className="text-sm text-[#d4d3ce]">
+          Nothing playing right now.</p>
       )}
     </section>
   );

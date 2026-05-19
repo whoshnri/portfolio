@@ -1,28 +1,8 @@
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ExternalLink } from "lucide-react";
+import { InlineCode } from "@/components/InlineCode";
 
 const workExperience = [
-    {
-        slug : "pricewaterhouse-coopers",
-        role: "Intern",
-        client: "PwC",
-        type: "Human Capital",
-        description: "",
-        contributions : [],
-        stack : ["Microsoft excel", "Microsoft word"],
-        startDate: "March 2026",
-        endDate: "Present",
-        status : "Ongoing",
-        sole: false,
-        links: {
-            live: "https://www.pwc.com/ng/en.html"
-        },
-        ongoingInvolvements: [
-            "Supporting the Talent Acquisition team with candidate screening and interview coordination.",
-            "Assisting in the upkeep of HR records and employee data.",
-            "Contributing to the execution of internal operations."
-        ]
-    },
     {
         slug: "suprvillain-store",
         role: "Freelance Developer",
@@ -35,12 +15,12 @@ const workExperience = [
             "Optimised for performance and mobile responsiveness"
         ],
         stack: ["Next.js", "Tailwind CSS", "TypeScript"],
-        startDate: "January 2025",
+        startDate: "April 2025",
         endDate: "Present",
         status: "ongoing",
         sole: true,
         links: {
-            live: "https://suprvillain.store"
+            // live: "https://suprvillain.vercel.app"
         }
     },
     {
@@ -81,7 +61,7 @@ const workExperience = [
         status: "completed",
         sole: true,
         links: {
-            live: "https://theafricanparent.vercel.app"
+            live: "https://theafricanparent.org"
         }
     },
     {
@@ -101,7 +81,7 @@ const workExperience = [
         status: "completed",
         sole: true,
         links: {
-            live: "https://modemenmag.vercel.app"
+            live: "https://modemenmag.com"
         }
     }
 ];
@@ -115,16 +95,16 @@ export default function Experience() {
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 className="w-full"
             >
-                <h2 className="text-3xl md:text-4xl font-playfair text-white mb-12 tracking-tight">Work Experience</h2>
+                <h2 className="text-3xl md:text-4xl font-playfair text-white mb-12 tracking-tight">Freelance Work Experience</h2>
 
                 <div className="flex flex-col gap-12 font-dmsans">
                     {workExperience.map((job) => (
                         <div key={job.slug} className="flex flex-col gap-4 border-t border-[#d4d3ce]/20 pt-8 mt-2 first:mt-0 first:border-0 first:pt-0">
                             <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-2">
                                 <h3 className="text-2xl font-playfair text-white">
-                                    {job.client} <span className="text-[#d4d3ce] font-dmsans text-lg tracking-wide">— {job.role}</span>
+                                    {job.client} <span className="text-[#d4d3ce] font-dmsans text-lg tracking-wide">- {job.role}</span>
                                 </h3>
-                                <span className="text-sm uppercase tracking-widest text-gray-500">
+                                <span className="text-sm uppercase font-bold text-gray-500">
                                     {job.startDate} – {job.endDate}
                                 </span>
                             </div>
@@ -137,7 +117,7 @@ export default function Experience() {
                                 {job.description}
                             </p>
 
-                            {job.ongoingInvolvements && job.ongoingInvolvements.length > 0 && (
+                            {/* {job.ongoingInvolvements && job.ongoingInvolvements.length > 0 && (
                                 <div className="mt-4">
                                     <h4 className="text-xs uppercase tracking-widest text-blue-400 mb-4 flex items-center gap-2">
                                         <span className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-pulse" />
@@ -151,7 +131,7 @@ export default function Experience() {
                                         ))}
                                     </ul>
                                 </div>
-                            )}
+                            )} */}
 
                             <ul className="mt-4 list-disc list-inside text-gray-400 font-light leading-relaxed space-y-1 mb-2">
                                 {job.contributions.map((contribution, idx) => (
@@ -159,7 +139,28 @@ export default function Experience() {
                                 ))}
                             </ul>
 
+                            {job.stack.length > 0 && (
+                                <div className="flex flex-wrap gap-2">
+                                    {job.stack.map((tech) => (
+                                        <p key={tech} className="text-gray-400">
+                                            {tech}
+                                        </p>
+                                    ))}
+                                </div>
+                            )}
 
+                            {job.links.live && (
+                                <a
+                                    href={job.links.live}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="mt-2 inline-flex w-fit items-center gap-2 text-sm text-gray-400 hover:text-white hover:underline transition-colors"
+                                >
+                                    View Project
+                                    <ExternalLink size={18} className="mb-1 text-xs"/>
+                                    
+                                </a>
+                            )}
                         </div>
                     ))}
                 </div>

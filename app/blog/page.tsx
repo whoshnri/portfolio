@@ -3,6 +3,7 @@ import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import blogs from "@/lib/blogs.json";
+import { InlineCode } from "@/components/InlineCode";
 
 
 export default function BlogList() {
@@ -29,7 +30,7 @@ export default function BlogList() {
                                 className="group block py-8 px-10 border-t border-gray-800 last:border-b transition-colors hover:bg-gray-900/30"
                             >
                                 <div className="flex flex-col gap-2 relative">
-                                    <span className="text-xs font-dmsans text-gray-500 uppercase tracking-widest">{blog.date}</span>
+                                    <span className="text-xs font-dmsans text-gray-500 uppercase tracking-widest"><InlineCode className="text-gray-400">{blog.date}</InlineCode></span>
                                     <h2 className="text-2xl font-playfair text-white group-hover:text-blue-400 transition-colors">
                                         {blog.heading}
                                     </h2>

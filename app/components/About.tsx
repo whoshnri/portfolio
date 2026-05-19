@@ -1,7 +1,8 @@
 "use client"
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { ChevronDown, ChevronUp } from "lucide-react"
+import { ChevronDown } from "lucide-react"
+import { InlineCode } from "@/components/InlineCode"
 
 export default function About() {
   const [isExpanded, setIsExpanded] = useState(false)
@@ -18,11 +19,11 @@ export default function About() {
 
         <div className="space-y-8">
           <p>
-            I am Henry Bassey, a 19 year old Software Engineer based in Lagos, Nigeria. I am currently the Founder of Quill Labs, a small collective dedicated to building focused, well-crafted software products.
+            I am Henry Bassey, a 19 year old Software Engineer based in <InlineCode link="https://en.wikipedia.org/wiki/Lagos">Lagos, Nigeria</InlineCode>. I started a software company, <InlineCode link="https://qlabs.space">Quill Labs</InlineCode>, when I was 18. It's one of the many things I'd love to scale with the people I connect with over the next few years; building products we believe and making a lasting impact. If you'd like to join in please send a message.
           </p>
 
           <p>
-            My journey into software engineering started early. I bypassed the standard path of endless courses and tutorials, opting instead to learn by shipping. I began by building console games in Python, and eventually scaled up to architecting full-stack web applications using React and Next.js, as well as engineering RAG chatbot pipelines.
+            My journey into software engineering started early. I bypassed the standard path of endless courses and tutorials, opting instead to learn by shipping. I began by building console games in <InlineCode link="https://www.python.org/about/gettingstarted/" icon="python">Python</InlineCode>, and eventually scaled up to architecting full-stack web applications, as well as building <InlineCode link="https://github.com/whoshnri">AI applications</InlineCode> in my spare time.
           </p>
 
           <AnimatePresence initial={false}>
@@ -35,25 +36,25 @@ export default function About() {
                 className="overflow-hidden space-y-8"
               >
                 <p className="pt-2  ">
-                  Most of my focus right now is directed towards Quill Labs. It serves as the primary incubator for my ideas, currently housing products like KwizHub, an academic marketplace designed to streamline educational resources, and Chorus, a paid voting platform. We also selectively partner with clients when the vision aligns with our drive to build efficient, robust software.
+                  Most of my focus right now is directed towards <InlineCode link="https://qlabs.space">Quill Labs</InlineCode>. It serves as the primary incubator for my ideas, client work, and personal products.
                 </p>
 
                 <p>
-                  Beyond the code, I am pursuing a degree in Computer Science at Yaba College of Technology, Lagos. My formal education is supplemented by hands-on SIWES training at the Yabatech Digital Technology Academy with an emphasis on AI and Machine Learning, alongside an NVIDIA Deep Learning Fundamentals certificate.
+                  Beyond the code, I am pursuing a degree in <InlineCode link="https://www.youtube.com/watch?v=cE4lpSFNFUE">Computer Science</InlineCode> at <InlineCode link="https://www.yabatech.edu.ng/">Yaba College of Technology</InlineCode>, Lagos.
                 </p>
 
-                <p>Currently I am serving my 1-year Industrial Attachment at <a href="https://www.pwc.com/ng/en.html" className="underline underline-offset-4 text-lg hover:text-white transition-colors">PwC</a>, hoping to gain useful experience in <span className="font-bold">Human Capital and challenging, dynmamic environments</span> and further upgrade my skillset and network.</p>
+                <p>Currently I am serving my 1-year Industrial Attachment at <a href="https://www.pwc.com/ng/en.html" className="underline underline-offset-4 text-lg hover:text-white transition-colors"><InlineCode>PwC</InlineCode></a>, hoping to gain useful experience in dynamic environments and further upgrade my skillset and network.</p>
 
                 <p>
-                  I operate on the fundamental belief that well-made software can be a great equalizer and create real opportunities, particularly here in Africa. That ambition translates directly into the products I build—they aren't just demos; they are tools that people actually use.
+                  I generally operate with optimism and enjoy every bit about who I am as a person and the things I build. That ambition translates directly into the products I build, and how I love day-to-day.
                 </p>
 
                 <p>
-                  When I'm not writing code or managing Quill Labs, you'll likely find me listening to music, tuning into podcasts, or actively thinking about the intersection of culture and technology.
+                  When I'm not writing code, managing Quill Labs or interning, you'll likely find me listening to music, tuning into podcasts, writing a blog or reading something. <br></br> <br></br> <InlineCode icon="arrow" link="https://books.henrybassey.me">I will add a library for my book reviews soon</InlineCode>.
                 </p>
 
                 <p className="pt-3">
-                  Most of my developer energy right now goes into Quill Labs. If you&apos;re curious about what we&apos;re building, <a href="https://qlabs.space" target="_blank" rel="noopener noreferrer" className="text-white border-b border-gray-600 hover:border-white pb-[2px] transition-colors">visit us here</a>.
+                  If you&apos;re curious about what I'm building, check out my <InlineCode icon="github" link="https://qlabs.space ">GitHub</InlineCode>.
                 </p>
               </motion.div>
             )}
@@ -63,7 +64,7 @@ export default function About() {
             onClick={() => setIsExpanded(!isExpanded)}
             className="group flex items-center gap-2 text-xs cursor-pointer uppercase tracking-widest text-gray-400 hover:text-white transition-colors mt-8"
           >
-            {isExpanded ? "Read Less" : "Read More"}
+            <p className="text-gray-300 tracking-thin group-hover:text-white">{isExpanded ? "Read Less" : "Read More"}</p>
             <motion.div
               animate={{ rotate: isExpanded ? 180 : 0 }}
               transition={{ duration: 0.3 }}
