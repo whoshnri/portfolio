@@ -1,0 +1,368 @@
+:root {
+  --line: 1.5rem;
+  --line-color: #c9d8ec;
+  --margin-color: #f0a3a3;
+  --paper: #fffdf8;
+  --ink: #2b2b3a;
+  --pen: #1f4fa8;
+  --pencil: #6b6b78;
+  --gutter-shade: rgba(0, 0, 0, 0.16);
+
+  --hole-size: 16px;
+  --hole-inset: 32px; /* hole centre distance from the page's inner edge */
+  --wire: 5px;
+  --wire-rise: 28px;
+  --ring-spacing: 52px;
+
+  --margin-x: 4rem; /* red margin line */
+  --page-pad: 2.5rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background: #fff;
+}
+
+body {
+  font-family: 'Handlee', cursive;
+  font-size: 0.95rem;
+  line-height: var(--line);
+  color: var(--ink);
+  overflow: hidden;
+}
+
+.book {
+  position: fixed;
+  inset: 0;
+  display: flex;
+}
+
+.page {
+  --gutter: transparent;
+
+  flex: 1;
+  position: relative;
+  padding: calc(var(--line) * 2) var(--page-pad) calc(var(--line) * 2)
+    calc(var(--margin-x) + 1rem);
+  background-color: var(--paper);
+  background-image:
+    var(--gutter),
+    linear-gradient(
+      to right,
+      transparent var(--margin-x),
+      var(--margin-color) var(--margin-x),
+      var(--margin-color) calc(var(--margin-x) + 2px),
+      transparent calc(var(--margin-x) + 2px)
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent calc(var(--line) - 1px),
+      var(--line-color) calc(var(--line) - 1px),
+      var(--line-color) var(--line)
+    );
+  background-attachment: scroll, local, local;
+  background-position: 0 0, 0 0, 0 calc(var(--line) * 2);
+  background-size: 100% 100%, 100% 100%, 100% calc(100% - var(--line) * 2);
+  background-repeat: no-repeat;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-color) transparent;
+}
+
+/* shading so the pages curve into the spine */
+.page--left {
+  --gutter: linear-gradient(to left, var(--gutter-shade), transparent 70px);
+}
+
+.page--right {
+  --gutter: linear-gradient(to right, var(--gutter-shade), transparent 70px);
+  border-left: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+/* ---------- writing on the lines ---------- */
+
+h1,
+h2,
+h3,
+p,
+ul {
+  margin: 0;
+}
+
+/* Handlee's baseline sits 0.265em above the middle of the line box
+   (ascent 0.93, descent 0.40); drop it onto the ruled line. */
+h1,
+h2,
+h3,
+p,
+li {
+  position: relative;
+  top: calc(var(--line) / 2 - 0.265em - 1px);
+  line-height: var(--line);
+}
+
+h1 {
+  font-size: 1.7rem;
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin-top: var(--line);
+  color: var(--pen);
+}
+
+h3 {
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+h3 span {
+  color: var(--pencil);
+  font-size: 0.95rem;
+}
+
+p + p,
+p + ul,
+ul + p {
+  margin-top: 0;
+}
+
+p {
+  margin-bottom: var(--line);
+}
+
+.intro p {
+  margin-bottom: 0;
+}
+
+.intro {
+  margin-bottom: var(--line);
+}
+
+.role {
+  color: var(--pencil);
+}
+
+.meta {
+  margin-bottom: 0;
+  color: var(--pencil);
+  font-size: 0.85rem;
+}
+
+.tags {
+  margin-bottom: 0;
+  color: var(--pencil);
+  font-size: 0.85rem;
+}
+
+ul {
+  padding-left: 1.1rem;
+  list-style: none;
+}
+
+ul li {
+  position: relative;
+}
+
+ul li::before {
+  content: '–';
+  position: absolute;
+  left: -1.1rem;
+  color: var(--pencil);
+}
+
+.job {
+  margin-bottom: var(--line);
+}
+
+.job p:last-child,
+.job p:has(+ ul) {
+  margin-bottom: 0;
+}
+
+.job h3 {
+  margin-top: var(--line);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.5rem;
+  padding: 0;
+}
+
+.links li::before {
+  content: none;
+}
+
+a {
+  color: var(--pen);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline wavy;
+  text-decoration-skip-ink: none;
+}
+
+mark {
+  background: linear-gradient(
+    to bottom,
+    transparent 45%,
+    rgba(255, 230, 90, 0.6) 45%,
+    rgba(255, 230, 90, 0.6) 85%,
+    transparent 85%
+  );
+  color: inherit;
+}
+
+/* ---------- spiral binding ---------- */
+
+.rings {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: calc(var(--hole-inset) * 2 + var(--hole-size));
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: stretch;
+  padding: calc(var(--wire-rise) + 6px) 0 12px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.ring {
+  position: relative;
+  display: block;
+  height: var(--hole-size);
+}
+
+.hole {
+  position: absolute;
+  top: 0;
+  width: var(--hole-size);
+  height: var(--hole-size);
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 65%, #f2efe8 0 25%, #a9a59c 80%);
+  box-shadow:
+    inset 0 3px 4px rgba(0, 0, 0, 0.6),
+    0 1px 0 rgba(255, 255, 255, 0.9),
+    0 0 0 1px rgba(0, 0, 0, 0.08);
+}
+
+.hole--left {
+  left: 0;
+}
+
+.hole--right {
+  right: 0;
+}
+
+/* the wire arches from the centre of one hole to the centre of the other */
+.wire {
+  position: absolute;
+  left: calc(var(--hole-size) / 2 - var(--wire) / 2);
+  right: calc(var(--hole-size) / 2 - var(--wire) / 2);
+  bottom: calc(var(--hole-size) / 2);
+  height: var(--wire-rise);
+  border: var(--wire) solid #8f959d;
+  border-bottom: 0;
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  filter: drop-shadow(0 3px 2px rgba(0, 0, 0, 0.35));
+}
+
+/* specular highlight along the top of the wire */
+.wire::before {
+  content: '';
+  position: absolute;
+  inset: calc(var(--wire) * -1 + 1px) 2px 4px;
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
+  border-bottom: 0;
+  border-radius: inherit;
+}
+
+/* the wire disappears into the hole */
+.wire::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: calc(var(--wire) * -1);
+  right: calc(var(--wire) * -1);
+  height: 6px;
+  background:
+    linear-gradient(to top, #3c4046, transparent) left / var(--wire) 100% no-repeat,
+    linear-gradient(to top, #3c4046, transparent) right / var(--wire) 100% no-repeat;
+}
+
+/* ---------- mobile: one long page, rings down the left ---------- */
+
+@media (max-width: 900px) {
+  :root {
+    --hole-size: 10px;
+    --hole-inset: 12px;
+    --wire: 3px;
+    --wire-rise: 14px;
+    --ring-spacing: 34px;
+
+    --margin-x: 1.75rem;
+    --page-pad: 1rem;
+  }
+
+  body {
+    overflow: auto;
+  }
+
+  .book {
+    position: relative;
+    inset: auto;
+    min-height: 100%;
+    flex-direction: column;
+    padding-left: calc(var(--hole-inset) + var(--hole-size) / 2);
+  }
+
+  .page {
+    flex: none;
+    overflow: visible;
+    padding-left: calc(var(--margin-x) + 0.6rem);
+  }
+
+  .page--left {
+    --gutter: linear-gradient(to right, rgba(0, 0, 0, 0.12), transparent 40px);
+    padding-bottom: 0;
+  }
+
+  .page--right {
+    --gutter: linear-gradient(to right, rgba(0, 0, 0, 0.12), transparent 40px);
+    flex: 1;
+    border-left: 0;
+    padding-top: 0;
+  }
+
+  .page--right {
+    background-position: 0 0, 0 0, 0 0;
+    background-size: 100% 100%, 100% 100%, 100% 100%;
+  }
+
+  .rings {
+    left: 0;
+    transform: none;
+  }
+
+  .hole--left {
+    visibility: hidden;
+  }
+}
